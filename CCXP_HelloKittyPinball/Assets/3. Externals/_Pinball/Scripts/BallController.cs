@@ -2,20 +2,30 @@
 using System.Collections;
 using SgLib;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class BallController : MonoBehaviour
 {
-
+    private Rigidbody2D _rigidbody2D;
     private GameManager gameManager;
     private SpriteRenderer spriteRenderer;
     private bool isChecked;
+
+    public float BallLaunchForce = 1000;
     // Use this for initialization
     void Start()
     {
+        _rigidbody2D = GetComponent<Rigidbody2D>();
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         gameObject.SetActive(false);
         spriteRenderer = GetComponent<SpriteRenderer>();
-        transform.position += (Random.value >= 0.5f) ? (new Vector3(0.2f, 0)) : (new Vector3(-0.2f, 0));
+        //transform.position += (Random.value >= 0.5f) ? (new Vector3(0.2f, 0)) : (new Vector3(-0.2f, 0));
         gameObject.SetActive(true);
+        ShootUp();
+    }
+
+    public void ShootUp()
+    {
+        _rigidbody2D.AddForce(Vector2.up*BallLaunchForce, ForceMode2D.Impulse);
     }
 
     void OnCollisionEnter2D(Collision2D col)

@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
     public float targetAliveTimeDecreaseValue = 2;
     public int minTargetAliveTime = 3;
     public int scoreToAddedBall = 15;
+    public float BallLaunchForce = 15f;
 
     private List<GameObject> listBall = new List<GameObject>();
     private Rigidbody2D leftFlipperRigid;
