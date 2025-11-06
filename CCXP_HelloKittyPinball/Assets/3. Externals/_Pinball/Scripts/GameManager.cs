@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
     public Color[] backgroundColor;
     public float torqueForce;
     public int scoreToIncreaseDifficulty = 10;
-    public float targetAliveTime = 20;
+    public float targetAliveTime = 60;
     public float targetAliveTimeDecreaseValue = 2;
     public int minTargetAliveTime = 3;
     public int scoreToAddedBall = 15;
