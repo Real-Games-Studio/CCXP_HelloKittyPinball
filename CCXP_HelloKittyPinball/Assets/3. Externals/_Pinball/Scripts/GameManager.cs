@@ -87,6 +87,13 @@ public class GameManager : MonoBehaviour
     private SpriteRenderer rightFlipperSpriteRenderer;
     private int obstacleCounter = 0;
     private bool stopProcessing;
+    
+    private bool _leftFlipperActive;
+    private bool _lastRoudnLeftFlipperActive;
+    private bool _rightFlipperActive;
+    private bool _lastRoudnRightFlipperActive;
+    public KeyCode leftFlipperKey = KeyCode.A;
+    public KeyCode rightFlipperKey = KeyCode.D;
    
     // Use this for initialization
     void Start()
@@ -121,44 +128,80 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(leftFlipperKey))
+        {
+            _leftFlipperActive = true;
+        }
+        if (Input.GetKeyDown(rightFlipperKey))
+        {
+            _rightFlipperActive = true;
+        }
+        if (Input.GetKeyUp(leftFlipperKey))
+        {
+            _leftFlipperActive = false;
+            _lastRoudnLeftFlipperActive = false;
+        }
+        if (Input.GetKeyUp(rightFlipperKey))
+        {
+            _rightFlipperActive = false;
+            _lastRoudnRightFlipperActive = false;
+        }
         if (!gameOver && !UIManager.firstLoad)
         {
-            Vector3 mousePosition = Input.mousePosition;
-            float halfScreenWidth = Screen.width / 2f;
-
-            bool rightMouseDown = Input.GetMouseButtonDown(0) && mousePosition.x >= halfScreenWidth;
-            bool leftMouseDown = Input.GetMouseButtonDown(0) && mousePosition.x < halfScreenWidth;
-            bool rightMouseHeld = Input.GetMouseButton(0) && !Input.GetMouseButtonDown(0) && mousePosition.x >= halfScreenWidth;
-            bool leftMouseHeld = Input.GetMouseButton(0) && !Input.GetMouseButtonDown(0) && mousePosition.x < halfScreenWidth;
-
-            bool rightKeyDown = Input.GetKeyDown(KeyCode.D);
-            bool leftKeyDown = Input.GetKeyDown(KeyCode.A);
-            bool rightKeyHeld = Input.GetKey(KeyCode.D) && !Input.GetKeyDown(KeyCode.D);
-            bool leftKeyHeld = Input.GetKey(KeyCode.A) && !Input.GetKeyDown(KeyCode.A);
-
-            if (rightMouseDown || leftMouseDown || rightKeyDown || leftKeyDown)
+            //Vector3 mousePosition = Input.mousePosition;
+            //float halfScreenWidth = Screen.width / 2f;
+            //
+            //bool rightMouseDown = Input.GetMouseButtonDown(0) && mousePosition.x >= halfScreenWidth;
+            //bool leftMouseDown = Input.GetMouseButtonDown(0) && mousePosition.x < halfScreenWidth;
+            //bool rightMouseHeld = Input.GetMouseButton(0) && !Input.GetMouseButtonDown(0) && mousePosition.x >= halfScreenWidth;
+            //bool leftMouseHeld = Input.GetMouseButton(0) && !Input.GetMouseButtonDown(0) && mousePosition.x < halfScreenWidth;
+            //
+            //bool rightKeyDown = Input.GetKeyDown(KeyCode.D);
+            //bool leftKeyDown = Input.GetKeyDown(KeyCode.A);
+            //bool rightKeyHeld = Input.GetKey(KeyCode.D) && !Input.GetKeyDown(KeyCode.D);
+            //bool leftKeyHeld = Input.GetKey(KeyCode.A) && !Input.GetKeyDown(KeyCode.A);
+            //
+            //if (rightMouseDown || leftMouseDown || rightKeyDown || leftKeyDown)
+            //{
+            //    SoundManager.Instance.PlaySound(SoundManager.Instance.flipping);
+            //}
+            //
+            //if (rightMouseDown || rightKeyDown)
+            //{
+            //    AddTorque(rightFlipperRigid, -torqueForce);
+            //}
+            //
+            //if (leftMouseDown || leftKeyDown)
+            //{
+            //    AddTorque(leftFlipperRigid, torqueForce);
+            //}
+            //
+            //if (rightMouseHeld || rightKeyHeld)
+            //{
+            //    AddTorque(rightFlipperRigid, -torqueForce);
+            //}
+            //
+            //if (leftMouseHeld || leftKeyHeld)
+            //{
+            //    AddTorque(leftFlipperRigid, torqueForce);
+            //}
+            if (_leftFlipperActive)
             {
-                SoundManager.Instance.PlaySound(SoundManager.Instance.flipping);
-            }
-
-            if (rightMouseDown || rightKeyDown)
-            {
-                AddTorque(rightFlipperRigid, -torqueForce);
-            }
-
-            if (leftMouseDown || leftKeyDown)
-            {
+                if (!_lastRoudnLeftFlipperActive)
+                {
+                    _lastRoudnLeftFlipperActive = true;
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.flipping);
+                }
                 AddTorque(leftFlipperRigid, torqueForce);
             }
-
-            if (rightMouseHeld || rightKeyHeld)
+            if (_rightFlipperActive)
             {
+                if (!_lastRoudnRightFlipperActive)
+                {
+                    _lastRoudnRightFlipperActive = true;
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.flipping);
+                }
                 AddTorque(rightFlipperRigid, -torqueForce);
-            }
-
-            if (leftMouseHeld || leftKeyHeld)
-            {
-                AddTorque(leftFlipperRigid, torqueForce);
             }
         }
     }
