@@ -12,7 +12,8 @@ public class CanvasScreenRanking : CanvasScreen
 
     [SerializeField] private TMP_Text matchPositionText;
     [SerializeField] private TMP_Text matchScoreText;
-
+    [SerializeField] private bool displayDaylyRanking = false;
+    
 
     public override void TurnOn()
     {
