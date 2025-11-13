@@ -16,7 +16,6 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
-
     public static int GameCount
     { 
         get { return _gameCount; } 
@@ -149,8 +148,8 @@ public class GameManager : MonoBehaviour
             _rightFlipperActive = false;
             _lastRoudnRightFlipperActive = false;
         }
-        if (!gameOver && !UIManager.firstLoad)
-        {
+        //if (!gameOver && !UIManager.firstLoad)
+        //{
             //Vector3 mousePosition = Input.mousePosition;
             //float halfScreenWidth = Screen.width / 2f;
             //
@@ -190,6 +189,7 @@ public class GameManager : MonoBehaviour
             //}
             if (_leftFlipperActive)
             {
+                Debug.Log("Left flipper active");
                 if (!_lastRoudnLeftFlipperActive)
                 {
                     _lastRoudnLeftFlipperActive = true;
@@ -199,6 +199,7 @@ public class GameManager : MonoBehaviour
             }
             if (_rightFlipperActive)
             {
+                Debug.Log("Right flipper active");
                 if (!_lastRoudnRightFlipperActive)
                 {
                     _lastRoudnRightFlipperActive = true;
@@ -206,7 +207,7 @@ public class GameManager : MonoBehaviour
                 }
                 AddTorque(rightFlipperRigid, -torqueForce);
             }
-        }
+       // }
     }
 
     /// <summary>
