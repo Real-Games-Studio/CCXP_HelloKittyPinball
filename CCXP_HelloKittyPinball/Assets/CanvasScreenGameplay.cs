@@ -20,7 +20,8 @@ public class CanvasScreenGameplay : CanvasScreen
 
             if(gameManager.GameState == GameState.GameOver)
             {
-                CallNextScreen();
+
+                Invoke("CallNextScreen", 1f);
             }
 
         }

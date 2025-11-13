@@ -8,7 +8,7 @@ namespace SgLib
     {
         public static ScoreManager Instance { get; private set; }
 
-        public int Score { get; private set; }
+        public int Score;
 
         public bool HasNewHighScore { get; private set; }
 

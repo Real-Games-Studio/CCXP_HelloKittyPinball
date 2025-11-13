@@ -1934,6 +1934,7 @@ MonoBehaviour:
     nextScreenName: 
     editor_turnOn: 0
     editor_turnOff: 0
+  displayDuration: 5
   firstPlaceText: {fileID: 1500499879}
   secondPlaceText: {fileID: 1935807754}
   thirdPlaceText: {fileID: 204551236}
@@ -6685,6 +6686,7 @@ MonoBehaviour:
     nextScreenName: Ranking
     editor_turnOn: 0
     editor_turnOff: 0
+  gameOverDisplaytime: 2
   gameManager: {fileID: 1716321950}
   finalMessageText: {fileID: 1191636711}
   finalMessages:
@@ -8305,7 +8307,7 @@ MonoBehaviour:
   scoreToAddedBall: 15
   BallLaunchForce: 10000
   startOnSceneLoad: 0
-  initialGameDuration: 60
+  initialGameDuration: 10
   leftFlipperKey: 97
   rightFlipperKey: 100
 --- !u!4 &1716321951

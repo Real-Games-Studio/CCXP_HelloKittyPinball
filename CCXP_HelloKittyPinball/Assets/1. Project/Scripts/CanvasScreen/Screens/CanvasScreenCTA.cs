@@ -62,6 +62,8 @@ public class CanvasScreenCTA : CanvasScreen
         DeactivateAllInstructions();
 
         base.TurnOff();
+
+        
     }
 
     private IEnumerator RunStagesLoop()
