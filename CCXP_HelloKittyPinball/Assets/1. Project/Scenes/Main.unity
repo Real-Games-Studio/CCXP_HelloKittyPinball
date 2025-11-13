@@ -268,9 +268,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54298368}
   m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!1 &77317159
 GameObject:
@@ -308,8 +308,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 64.749, y: -165.38}
-  m_SizeDelta: {x: 202.64, y: 215.24}
+  m_AnchoredPosition: {x: 91.834076, y: -170.73}
+  m_SizeDelta: {x: 256.8102, y: 204.53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &77317161
 MonoBehaviour:
@@ -912,7 +912,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 500
+  m_text: 321
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d59aeb5088d8b4eb6f83afe346912d, type: 2}
   m_sharedMaterial: {fileID: -345708099315028105, guid: f2d59aeb5088d8b4eb6f83afe346912d, type: 2}
@@ -939,8 +939,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 78.7
-  m_fontSizeBase: 78.7
+  m_fontSize: 65.72
+  m_fontSizeBase: 65.72
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1343,8 +1343,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80.6
-  m_fontSizeBase: 80.6
+  m_fontSize: 75
+  m_fontSizeBase: 75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1359,7 +1359,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -1672,6 +1672,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 4466758854150813544, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
+      propertyPath: m_TagString
+      value: Gold
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1769,6 +1773,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 470839443573350047, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
+      propertyPath: m_TagString
+      value: Gold
+      objectReference: {fileID: 0}
     - target: {fileID: 4041935383203076298, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.503
@@ -1861,7 +1869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 21249096, guid: 842f811815c1279488663ca457f5e4db, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 21249096, guid: 842f811815c1279488663ca457f5e4db, type: 3}
       propertyPath: m_SortingLayerID
@@ -1888,6 +1896,10 @@ PrefabInstance:
     - target: {fileID: 470839443573350047, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 470839443573350047, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
+      propertyPath: m_TagString
+      value: Gold
       objectReference: {fileID: 0}
     - target: {fileID: 4041935383203076298, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2264,6 +2276,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 470839443573350047, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
+      propertyPath: m_TagString
+      value: Gold
+      objectReference: {fileID: 0}
     - target: {fileID: 4041935383203076298, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.11
@@ -2325,6 +2341,10 @@ PrefabInstance:
     - target: {fileID: 470839443573350047, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 470839443573350047, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
+      propertyPath: m_TagString
+      value: Gold
       objectReference: {fileID: 0}
     - target: {fileID: 4041935383203076298, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2728,6 +2748,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 4466758854150813544, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
+      propertyPath: m_TagString
+      value: Gold
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2838,10 +2862,11 @@ Transform:
   m_GameObject: {fileID: 664326332}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.14, z: 0}
+  m_LocalPosition: {x: -9.3, y: -1.14, z: 0}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 1098885177}
   - {fileID: 697465103}
   - {fileID: 238922792}
   - {fileID: 2086479810}
@@ -4221,6 +4246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 4786967756467130020, guid: f7a067cc9150c9d429f754a2a4a19dc7, type: 3}
+      propertyPath: m_TagString
+      value: Gold
+      objectReference: {fileID: 0}
     - target: {fileID: 9003169431747070193, guid: f7a067cc9150c9d429f754a2a4a19dc7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.891
@@ -4896,8 +4925,8 @@ Camera:
   m_GameObject: {fileID: 1098885172}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0.019607844}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.08627451, g: 0, b: 0.0627451, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -4922,7 +4951,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.56
+  orthographic size: 7.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4946,12 +4975,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098885172}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.38, z: -7.1428576}
+  m_LocalScale: {x: 0.71428573, y: 0.71428573, z: 0.71428573}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 664326333}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1098885178
 MonoBehaviour:
@@ -5354,7 +5383,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TRIO UNIDA, VITORIA GRANTIDA!
+  m_text: QUARTETO UNIDA, VITORIA GRANTIDA!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d59aeb5088d8b4eb6f83afe346912d, type: 2}
   m_sharedMaterial: {fileID: -345708099315028105, guid: f2d59aeb5088d8b4eb6f83afe346912d, type: 2}
@@ -5748,7 +5777,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1237514624
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5999,6 +6028,10 @@ PrefabInstance:
     - target: {fileID: 3212665596975754819, guid: 0fd28a27f1b3a334a81a22288a23d64a, type: 3}
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3212665596975754819, guid: 0fd28a27f1b3a334a81a22288a23d64a, type: 3}
+      propertyPath: m_TagString
+      value: Gold
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6556,7 +6589,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.46, y: 0.24}
-  m_ConnectedAnchor: {x: 1.701, y: -5.7011995}
+  m_ConnectedAnchor: {x: -7.599, y: -5.7011995}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -7044,9 +7077,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466807503}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &1476551964
 GameObject:
@@ -7474,7 +7507,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 500
+  m_text: 1999
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d59aeb5088d8b4eb6f83afe346912d, type: 2}
   m_sharedMaterial: {fileID: -345708099315028105, guid: f2d59aeb5088d8b4eb6f83afe346912d, type: 2}
@@ -7501,8 +7534,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 78.7
-  m_fontSizeBase: 78.7
+  m_fontSize: 65.72
+  m_fontSizeBase: 65.72
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8147,6 +8180,10 @@ PrefabInstance:
     - target: {fileID: 470839443573350047, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 470839443573350047, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
+      propertyPath: m_TagString
+      value: Gold
       objectReference: {fileID: 0}
     - target: {fileID: 4041935383203076298, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9014,6 +9051,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 2211403533507378801, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
+      propertyPath: m_TagString
+      value: Gold
+      objectReference: {fileID: 0}
     - target: {fileID: 2319192069312641060, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.07
@@ -9273,7 +9314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 9999
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d59aeb5088d8b4eb6f83afe346912d, type: 2}
   m_sharedMaterial: {fileID: -345708099315028105, guid: f2d59aeb5088d8b4eb6f83afe346912d, type: 2}
@@ -9553,6 +9594,10 @@ PrefabInstance:
     - target: {fileID: 4466758854150813544, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4466758854150813544, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
+      propertyPath: m_TagString
+      value: Gold
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9839,6 +9884,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 2719493452614011256, guid: f584df6d106d8474ca763335e88c2062, type: 3}
+      propertyPath: m_TagString
+      value: Gold
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9981,7 +10030,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 500
+  m_text: 1050
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d59aeb5088d8b4eb6f83afe346912d, type: 2}
   m_sharedMaterial: {fileID: -345708099315028105, guid: f2d59aeb5088d8b4eb6f83afe346912d, type: 2}
@@ -10008,8 +10057,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 78.7
-  m_fontSizeBase: 78.7
+  m_fontSize: 65.72
+  m_fontSizeBase: 65.72
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10898,6 +10947,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 2211403533507378801, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
+      propertyPath: m_TagString
+      value: Gold
+      objectReference: {fileID: 0}
     - target: {fileID: 2319192069312641060, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.83
@@ -10984,7 +11037,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.44, y: 0.23}
-  m_ConnectedAnchor: {x: -2.114, y: -5.6759996}
+  m_ConnectedAnchor: {x: -11.4140005, y: -5.6759996}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -11475,6 +11528,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 470839443573350047, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
+      propertyPath: m_TagString
+      value: Gold
+      objectReference: {fileID: 0}
     - target: {fileID: 4041935383203076298, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.34
@@ -11772,6 +11829,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3212665596975754819, guid: 0fd28a27f1b3a334a81a22288a23d64a, type: 3}
+      propertyPath: m_TagString
+      value: Gold
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11793,6 +11854,10 @@ PrefabInstance:
     - target: {fileID: 470839443573350047, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 470839443573350047, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
+      propertyPath: m_TagString
+      value: Gold
       objectReference: {fileID: 0}
     - target: {fileID: 4041935383203076298, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11896,6 +11961,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4380412385629624036, guid: 7a4305e85c7a30f4a94b313c34d46682, type: 3}
+      propertyPath: m_TagString
+      value: Gold
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11958,6 +12027,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4466758854150813544, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
+      propertyPath: m_TagString
+      value: Gold
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11979,6 +12052,10 @@ PrefabInstance:
     - target: {fileID: 2211403533507378801, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211403533507378801, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
+      propertyPath: m_TagString
+      value: Gold
       objectReference: {fileID: 0}
     - target: {fileID: 2319192069312641060, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12042,6 +12119,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 617642634935995598, guid: c2064d1acde36cf4b9384b741892a555, type: 3}
+      propertyPath: m_TagString
+      value: Gold
+      objectReference: {fileID: 0}
     - target: {fileID: 3894867789662866075, guid: c2064d1acde36cf4b9384b741892a555, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.18
@@ -12103,6 +12184,10 @@ PrefabInstance:
     - target: {fileID: 4786967756467130020, guid: f7a067cc9150c9d429f754a2a4a19dc7, type: 3}
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786967756467130020, guid: f7a067cc9150c9d429f754a2a4a19dc7, type: 3}
+      propertyPath: m_TagString
+      value: Gold
       objectReference: {fileID: 0}
     - target: {fileID: 9003169431747070193, guid: f7a067cc9150c9d429f754a2a4a19dc7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12206,6 +12291,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 2719493452614011256, guid: f584df6d106d8474ca763335e88c2062, type: 3}
+      propertyPath: m_TagString
+      value: Gold
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12227,6 +12316,10 @@ PrefabInstance:
     - target: {fileID: 5382348317318717962, guid: 732e5e5c26ed1d94f9eb70013f83da90, type: 3}
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5382348317318717962, guid: 732e5e5c26ed1d94f9eb70013f83da90, type: 3}
+      propertyPath: m_TagString
+      value: Gold
       objectReference: {fileID: 0}
     - target: {fileID: 8371882114290574431, guid: 732e5e5c26ed1d94f9eb70013f83da90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12325,6 +12418,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Objeto Inteligente de Vetor (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 9041149203892414808, guid: da52fbdbf23f876479426a473bae7af8, type: 3}
+      propertyPath: m_TagString
+      value: Gold
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12339,7 +12436,6 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1098885177}
   - {fileID: 1703569872}
   - {fileID: 664326333}
   - {fileID: 1085160059}
