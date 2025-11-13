@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using SgLib;
 using System.Collections.Generic;
+using System;
 
 public enum GameState
 {
@@ -15,7 +16,6 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
-
     public static int GameCount
     { 
         get { return _gameCount; } 
@@ -44,10 +44,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private GameState _gameState = GameState.Prepare;
+    public GameState _gameState = GameState.Prepare;
+
 
     [Header("Gameplay References")]
-    public UIManager uIManager;
     public GameObject ballPrefab;
     public GameObject ballPoint;
     public GameObject obstacleManager;
@@ -111,13 +111,15 @@ public class GameManager : MonoBehaviour
         rightFlipperSpriteRenderer = rightFlipper.GetComponent<SpriteRenderer>();
 
         //Change color of backgorund, ushape, fence, flippers
-        Color color = backgroundColor[Random.Range(0, backgroundColor.Length)];
+        Color color = backgroundColor[UnityEngine.Random.Range(0, backgroundColor.Length)];
         ushapeSpriteRenderer.color = color;
         backgroundSpriteRenderer.color = color;
         fenceSpriteRenderer.color = color;
         leftFlipperSpriteRenderer.color = color;
         rightFlipperSpriteRenderer.color = color;
 
+
+        //
         if (!UIManager.firstLoad)
         {
             StartGame();
@@ -146,8 +148,8 @@ public class GameManager : MonoBehaviour
             _rightFlipperActive = false;
             _lastRoudnRightFlipperActive = false;
         }
-        if (!gameOver && !UIManager.firstLoad)
-        {
+        //if (!gameOver && !UIManager.firstLoad)
+        //{
             //Vector3 mousePosition = Input.mousePosition;
             //float halfScreenWidth = Screen.width / 2f;
             //
@@ -187,6 +189,7 @@ public class GameManager : MonoBehaviour
             //}
             if (_leftFlipperActive)
             {
+                Debug.Log("Left flipper active");
                 if (!_lastRoudnLeftFlipperActive)
                 {
                     _lastRoudnLeftFlipperActive = true;
@@ -196,6 +199,7 @@ public class GameManager : MonoBehaviour
             }
             if (_rightFlipperActive)
             {
+                Debug.Log("Right flipper active");
                 if (!_lastRoudnRightFlipperActive)
                 {
                     _lastRoudnRightFlipperActive = true;
@@ -203,7 +207,7 @@ public class GameManager : MonoBehaviour
                 }
                 AddTorque(rightFlipperRigid, -torqueForce);
             }
-        }
+       // }
     }
 
     /// <summary>
@@ -214,7 +218,7 @@ public class GameManager : MonoBehaviour
         GameState = GameState.Playing;
 
         //Enable goldPoint, create gold at that position and start processing
-        GameObject targetPoint = targetPointManager.transform.GetChild(Random.Range(0, targetPointManager.transform.childCount)).gameObject;
+        GameObject targetPoint = targetPointManager.transform.GetChild(UnityEngine.Random.Range(0, targetPointManager.transform.childCount)).gameObject;
         targetPoint.SetActive(true);
         currentTargetPoint = targetPoint;
         Vector2 pos = Camera.main.ScreenToWorldPoint(currentTargetPoint.transform.position);
@@ -254,10 +258,10 @@ public class GameManager : MonoBehaviour
             currentTargetPoint.SetActive(false);
 
             //Random new goldPoint and create new gold, then start processing
-            GameObject goldPoint = targetPointManager.transform.GetChild(Random.Range(0, targetPointManager.transform.childCount)).gameObject;
+            GameObject goldPoint = targetPointManager.transform.GetChild(UnityEngine.Random.Range(0, targetPointManager.transform.childCount)).gameObject;
             while (currentTargetPoint == goldPoint)
             {
-                goldPoint = targetPointManager.transform.GetChild(Random.Range(0, targetPointManager.transform.childCount)).gameObject;
+                goldPoint = targetPointManager.transform.GetChild(UnityEngine.Random.Range(0, targetPointManager.transform.childCount)).gameObject;
             }
             goldPoint.SetActive(true);
             currentTargetPoint = goldPoint;
@@ -303,7 +307,7 @@ public class GameManager : MonoBehaviour
         if (ScoreManager.Instance.Score % scoreToIncreaseDifficulty == 0)
         {
             //Change background element color
-            Color color = backgroundColor[Random.Range(0, backgroundColor.Length)];
+            Color color = backgroundColor[UnityEngine.Random.Range(0, backgroundColor.Length)];
             ushapeSpriteRenderer.color = color;
             backgroundSpriteRenderer.color = color;
             fenceSpriteRenderer.color = color;
