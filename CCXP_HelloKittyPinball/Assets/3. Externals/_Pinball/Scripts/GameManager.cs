@@ -45,23 +45,17 @@ public class GameManager : MonoBehaviour
     }
 
     public GameState _gameState = GameState.Prepare;
-
-
-    [Header("Gameplay References")]
+    
+    [Header("Gameplay References")] 
+    public GameObject ballColliderStart;
     public GameObject ballPrefab;
     public GameObject ballPoint;
     public GameObject obstacleManager;
-    public GameObject targetPointManager;
     public GameObject leftFlipper;
     public GameObject rightFlipper;
-    public GameObject targetPrefab;
     public GameObject ushape;
     public GameObject background;
     public GameObject fence;
-    [HideInInspector]
-    public GameObject currentTargetPoint;
-    [HideInInspector]
-    public GameObject currentTarget;
     public ParticleSystem die;
     public ParticleSystem hitGold;
     [HideInInspector]
@@ -112,7 +106,6 @@ public class GameManager : MonoBehaviour
         GameState = GameState.Prepare;
 
         ScoreManager.Instance.Reset();
-        currentTargetPoint = null;
         leftFlipperRigid = leftFlipper.GetComponent<Rigidbody2D>();
         rightFlipperRigid = rightFlipper.GetComponent<Rigidbody2D>();
         ushapeSpriteRenderer = ushape.GetComponent<SpriteRenderer>();
@@ -158,48 +151,8 @@ public class GameManager : MonoBehaviour
             _rightFlipperActive = false;
             _lastRoudnRightFlipperActive = false;
         }
-        //if (!gameOver && !UIManager.firstLoad)
-        //{
-            //Vector3 mousePosition = Input.mousePosition;
-            //float halfScreenWidth = Screen.width / 2f;
-            //
-            //bool rightMouseDown = Input.GetMouseButtonDown(0) && mousePosition.x >= halfScreenWidth;
-            //bool leftMouseDown = Input.GetMouseButtonDown(0) && mousePosition.x < halfScreenWidth;
-            //bool rightMouseHeld = Input.GetMouseButton(0) && !Input.GetMouseButtonDown(0) && mousePosition.x >= halfScreenWidth;
-            //bool leftMouseHeld = Input.GetMouseButton(0) && !Input.GetMouseButtonDown(0) && mousePosition.x < halfScreenWidth;
-            //
-            //bool rightKeyDown = Input.GetKeyDown(KeyCode.D);
-            //bool leftKeyDown = Input.GetKeyDown(KeyCode.A);
-            //bool rightKeyHeld = Input.GetKey(KeyCode.D) && !Input.GetKeyDown(KeyCode.D);
-            //bool leftKeyHeld = Input.GetKey(KeyCode.A) && !Input.GetKeyDown(KeyCode.A);
-            //
-            //if (rightMouseDown || leftMouseDown || rightKeyDown || leftKeyDown)
-            //{
-            //    SoundManager.Instance.PlaySound(SoundManager.Instance.flipping);
-            //}
-            //
-            //if (rightMouseDown || rightKeyDown)
-            //{
-            //    AddTorque(rightFlipperRigid, -torqueForce);
-            //}
-            //
-            //if (leftMouseDown || leftKeyDown)
-            //{
-            //    AddTorque(leftFlipperRigid, torqueForce);
-            //}
-            //
-            //if (rightMouseHeld || rightKeyHeld)
-            //{
-            //    AddTorque(rightFlipperRigid, -torqueForce);
-            //}
-            //
-            //if (leftMouseHeld || leftKeyHeld)
-            //{
-            //    AddTorque(leftFlipperRigid, torqueForce);
-            //}
             if (_leftFlipperActive)
             {
-                Debug.Log("Left flipper active");
                 if (!_lastRoudnLeftFlipperActive)
                 {
                     _lastRoudnLeftFlipperActive = true;
@@ -209,7 +162,6 @@ public class GameManager : MonoBehaviour
             }
             if (_rightFlipperActive)
             {
-                Debug.Log("Right flipper active");
                 if (!_lastRoudnRightFlipperActive)
                 {
                     _lastRoudnRightFlipperActive = true;
@@ -240,18 +192,11 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-            ResetRuntimeState();
+        ResetRuntimeState();
         GameState = GameState.Playing;
-            gameOver = false;
-            timerActive = true;
-            remainingGameTime = Mathf.Max(0f, initialGameDuration);
-
-        //Enable goldPoint, create gold at that position and start processing
-        GameObject targetPoint = targetPointManager.transform.GetChild(UnityEngine.Random.Range(0, targetPointManager.transform.childCount)).gameObject;
-        targetPoint.SetActive(true);
-        currentTargetPoint = targetPoint;
-        Vector2 pos = Camera.main.ScreenToWorldPoint(currentTargetPoint.transform.position);
-        currentTarget = Instantiate(targetPrefab, pos, Quaternion.identity) as GameObject;
+        gameOver = false;
+        timerActive = true;
+        remainingGameTime = Mathf.Max(0f, initialGameDuration);
 
         StartCoroutine(Processing());
     }
@@ -276,34 +221,9 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-
+        ballColliderStart.SetActive(false);
         GameObject ball = Instantiate(ballPrefab, ballPoint.transform.position, Quaternion.identity) as GameObject;
         listBall.Add(ball);
-    }
-
-    /// <summary>
-    /// Create gold 
-    /// </summary>
-    public void CreateTarget()
-    {
-        if (!gameOver)
-        {
-            //Stop all processing, disable current gold
-            StopAllCoroutines();
-            currentTargetPoint.SetActive(false);
-
-            //Random new goldPoint and create new gold, then start processing
-            GameObject goldPoint = targetPointManager.transform.GetChild(UnityEngine.Random.Range(0, targetPointManager.transform.childCount)).gameObject;
-            while (currentTargetPoint == goldPoint)
-            {
-                goldPoint = targetPointManager.transform.GetChild(UnityEngine.Random.Range(0, targetPointManager.transform.childCount)).gameObject;
-            }
-            goldPoint.SetActive(true);
-            currentTargetPoint = goldPoint;
-            Vector2 goldPos = Camera.main.ScreenToWorldPoint(currentTargetPoint.transform.position);
-            currentTarget = Instantiate(targetPrefab, goldPos, Quaternion.identity) as GameObject;
-            StartCoroutine(Processing());
-        }      
     }
 
     /// <summary>
@@ -362,15 +282,12 @@ public class GameManager : MonoBehaviour
 
     IEnumerator Processing()
     {
-        Image img = currentTargetPoint.GetComponent<Image>();
-        img.fillAmount = 0;
         float t = 0;
         while (t < targetAliveTime)
         {
             t += Time.deltaTime;
             float fraction = t / targetAliveTime;
             float newF = Mathf.Lerp(0, 1, fraction);
-            img.fillAmount = newF;
             yield return null;
         }
 
@@ -383,14 +300,6 @@ public class GameManager : MonoBehaviour
                 listBall[i].GetComponent<BallController>().Exploring();
             }
 
-            currentTargetPoint.SetActive(false);
-
-            ParticleSystem particle = Instantiate(hitGold, currentTarget.transform.position, Quaternion.identity) as ParticleSystem;
-            var main = particle.main;
-            main.startColor = currentTarget.gameObject.GetComponent<SpriteRenderer>().color;
-            particle.Play();
-            Destroy(particle.gameObject, 1f);
-            Destroy(currentTarget.gameObject);
 
             GameOver();
         }      
@@ -407,17 +316,6 @@ public class GameManager : MonoBehaviour
         gameOver = true;
 
         StopAllCoroutines();
-
-        if (currentTargetPoint != null)
-        {
-            currentTargetPoint.SetActive(false);
-        }
-
-        if (currentTarget != null)
-        {
-            Destroy(currentTarget);
-            currentTarget = null;
-        }
 
         for (int i = 0; i < listBall.Count; i++)
         {
@@ -448,17 +346,5 @@ public class GameManager : MonoBehaviour
         }
 
         listBall.Clear();
-
-        if (currentTargetPoint != null)
-        {
-            currentTargetPoint.SetActive(false);
-            currentTargetPoint = null;
-        }
-
-        if (currentTarget != null)
-        {
-            Destroy(currentTarget);
-            currentTarget = null;
-        }
     }
 }

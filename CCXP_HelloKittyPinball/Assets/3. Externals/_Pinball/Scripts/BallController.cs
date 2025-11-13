@@ -10,7 +10,8 @@ public class BallController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool isChecked;
 
-    public float BallLaunchForce = 1000;
+    public float MinBallLaunchForce = 47;
+    public float MaxBallLaunchForce = 52;
     // Use this for initialization
     void Start()
     {
@@ -25,6 +26,7 @@ public class BallController : MonoBehaviour
 
     public void ShootUp()
     {
+        var BallLaunchForce = Random.Range(MinBallLaunchForce, MaxBallLaunchForce);
         _rigidbody2D.AddForce(Vector2.up*BallLaunchForce, ForceMode2D.Impulse);
     }
 
@@ -52,7 +54,7 @@ public class BallController : MonoBehaviour
             particle.Play();
             Destroy(particle.gameObject, 1f);
             Destroy(other.gameObject);
-            gameManager.CreateTarget();
+            //gameManager.CreateTarget();
         }
     }
 
