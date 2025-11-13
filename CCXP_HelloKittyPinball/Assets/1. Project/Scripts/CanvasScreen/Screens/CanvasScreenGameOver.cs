@@ -11,12 +11,14 @@ public class CanvasScreenGameOver : CanvasScreen
    [SerializeField] public List<string> finalMessages;
    [SerializeField] public TMP_Text finalScoreText;
 
-
+    private bool writing = false;
    override public void TurnOn()
    {
        base.TurnOn();
 
-       if(finalMessages.Count > 0)
+     if(!writing)
+     {
+        if(finalMessages.Count > 0)
        {
            int randomIndex = Random.Range(0, finalMessages.Count);
            finalMessageText.SetText(finalMessages[randomIndex]);
@@ -27,7 +29,21 @@ public class CanvasScreenGameOver : CanvasScreen
 
        // aqui podemos colocar uma chamada para salvar o score do jogador
 
+       if (ScoreManager.Instance != null)
+       {
+           ScoreManager.Instance.WriteScoreDataToCSV();
+       }
+           writing = true;
+
+     }
+
 
        Invoke("CallNextScreen", gameOverDisplaytime);
+   }
+
+   override public void TurnOff()
+   {
+        writing = false;
+       base.TurnOff();
    }
 }

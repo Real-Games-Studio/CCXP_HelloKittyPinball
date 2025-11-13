@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,7 +20,7 @@ public class CanvasScreenRanking : CanvasScreen
     {
         base.TurnOn();
 
-        //UpdateRankingDisplay();
+        UpdateRankingDisplay();
         Invoke("ResetGame", displayDuration);
     }
 
@@ -27,5 +28,87 @@ public class CanvasScreenRanking : CanvasScreen
     void ResetGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void UpdateRankingDisplay()
+    {
+        if (ScoreManager.Instance == null)
+        {
+            ClearRankingTexts();
+            return;
+        }
+
+        List<ScoreData> topScores = ScoreManager.Instance.GetTopScores(3, displayDaylyRanking);
+
+        AssignPlaceText(firstPlaceText, topScores, 0);
+        AssignPlaceText(secondPlaceText, topScores, 1);
+        AssignPlaceText(thirdPlaceText, topScores, 2);
+
+        ScoreData? lastScore = ScoreManager.Instance.LastRecordedScore;
+
+        if (lastScore.HasValue)
+        {
+            SetMatchScore(lastScore.Value.score);
+            int? position = ScoreManager.Instance.GetLastRecordedScorePosition(displayDaylyRanking);
+            SetMatchPosition(position);
+        }
+        else
+        {
+            int currentScore = ScoreManager.Instance.Score;
+            SetMatchScore(currentScore);
+
+            int position = displayDaylyRanking
+                ? ScoreManager.Instance.GetPositionInRankingOnCurrentDay(currentScore)
+                : ScoreManager.Instance.GetPositionInRanking(currentScore);
+
+            SetMatchPosition(position > 0 ? position : (int?)null);
+        }
+    }
+
+    private void AssignPlaceText(TMP_Text target, List<ScoreData> scores, int index)
+    {
+        if (target == null)
+        {
+            return;
+        }
+
+        if (scores != null && index < scores.Count)
+        {
+            ScoreData entry = scores[index];
+            target.SetText($"{entry.score}");
+        }
+        else
+        {
+            target.SetText("-");
+        }
+    }
+
+    private void SetMatchScore(int? score)
+    {
+        if (matchScoreText == null)
+        {
+            return;
+        }
+
+        matchScoreText.SetText(score.Value.ToString());
+    }
+
+    private void SetMatchPosition(int? position)
+    {
+        if (matchPositionText == null)
+        {
+            return;
+        }
+
+        matchPositionText.SetText(position.HasValue && position.Value > 0 ? $"{position.Value}" : "-");
+    }
+
+    private void ClearRankingTexts()
+    {
+        AssignPlaceText(firstPlaceText, null, 0);
+        AssignPlaceText(secondPlaceText, null, 0);
+        AssignPlaceText(thirdPlaceText, null, 0);
+        SetMatchScore(null);
+        SetMatchPosition(null);
     }
 }
