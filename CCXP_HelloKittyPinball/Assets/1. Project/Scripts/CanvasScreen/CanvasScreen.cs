@@ -22,8 +22,7 @@ public class CanvasScreen: MonoBehaviour
     }
     [Tooltip("Toda tela deve ter uma base de canvas group")]
     public CanvasGroup canvasgroup;
-    [SerializeField] protected ScreenData data;
-    public ScreenData screenData;
+    [SerializeField]protected ScreenData data;
     public virtual void OnValidate()
     {
         if (canvasgroup == null)
