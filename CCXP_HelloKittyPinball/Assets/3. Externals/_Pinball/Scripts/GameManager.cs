@@ -76,6 +76,12 @@ public class GameManager : MonoBehaviour
     public int minTargetAliveTime = 3;
     public int scoreToAddedBall = 15;
     public float BallLaunchForce = 15f;
+    [Tooltip("Automatically start gameplay when the scene loads")]
+    public bool startOnSceneLoad = false;
+
+    [Header("Game Timer")]
+    [Tooltip("Total play time in seconds before the session ends")]
+    public float initialGameDuration = 60f;
 
     private List<GameObject> listBall = new List<GameObject>();
     private Rigidbody2D leftFlipperRigid;
@@ -94,6 +100,11 @@ public class GameManager : MonoBehaviour
     private bool _lastRoudnRightFlipperActive;
     public KeyCode leftFlipperKey = KeyCode.A;
     public KeyCode rightFlipperKey = KeyCode.D;
+
+    private float remainingGameTime;
+    private bool timerActive;
+
+    public float RemainingGameTime => Mathf.Max(0f, remainingGameTime);
    
     // Use this for initialization
     void Start()
@@ -119,8 +130,7 @@ public class GameManager : MonoBehaviour
         rightFlipperSpriteRenderer.color = color;
 
 
-        //
-        if (!UIManager.firstLoad)
+        if (startOnSceneLoad)
         {
             StartGame();
             CreateBall();
@@ -207,7 +217,17 @@ public class GameManager : MonoBehaviour
                 }
                 AddTorque(rightFlipperRigid, -torqueForce);
             }
-       // }
+           // }
+
+            if (timerActive && !gameOver && GameState == GameState.Playing)
+            {
+                remainingGameTime -= Time.deltaTime;
+                if (remainingGameTime <= 0f)
+                {
+                    remainingGameTime = 0f;
+                    TriggerTimeGameOver();
+                }
+            }
     }
 
     /// <summary>
@@ -215,7 +235,16 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void StartGame()
     {
+        if (GameState == GameState.Playing)
+        {
+            return;
+        }
+
+            ResetRuntimeState();
         GameState = GameState.Playing;
+            gameOver = false;
+            timerActive = true;
+            remainingGameTime = Mathf.Max(0f, initialGameDuration);
 
         //Enable goldPoint, create gold at that position and start processing
         GameObject targetPoint = targetPointManager.transform.GetChild(UnityEngine.Random.Range(0, targetPointManager.transform.childCount)).gameObject;
@@ -229,6 +258,7 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
+        timerActive = false;
         GameState = GameState.GameOver;
     }
 
@@ -242,6 +272,11 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void CreateBall()
     {
+        if (gameOver)
+        {
+            return;
+        }
+
         GameObject ball = Instantiate(ballPrefab, ballPoint.transform.position, Quaternion.identity) as GameObject;
         listBall.Add(ball);
     }
@@ -280,22 +315,9 @@ public class GameManager : MonoBehaviour
         //remove the ball from the list
         listBall.Remove(ball);
 
-        //No ball left -> game over
-        if (listBall.Count == 0)
+        if (!gameOver)
         {
-            SoundManager.Instance.PlaySound(SoundManager.Instance.gameOver);
-            gameOver = true;
-
-            currentTargetPoint.SetActive(false);
-
-            ParticleSystem particle = Instantiate(hitGold, currentTarget.transform.position, Quaternion.identity) as ParticleSystem;
-            var main = particle.main;
-            main.startColor = currentTarget.gameObject.GetComponent<SpriteRenderer>().color;
-            particle.Play();
-            Destroy(particle.gameObject, 1f);
-            Destroy(currentTarget.gameObject);
-
-            GameOver();           
+            CreateBall();
         }
     }
 
@@ -372,5 +394,71 @@ public class GameManager : MonoBehaviour
 
             GameOver();
         }      
+    }
+
+    private void TriggerTimeGameOver()
+    {
+        if (gameOver)
+        {
+            return;
+        }
+
+        SoundManager.Instance.PlaySound(SoundManager.Instance.gameOver);
+        gameOver = true;
+
+        StopAllCoroutines();
+
+        if (currentTargetPoint != null)
+        {
+            currentTargetPoint.SetActive(false);
+        }
+
+        if (currentTarget != null)
+        {
+            Destroy(currentTarget);
+            currentTarget = null;
+        }
+
+        for (int i = 0; i < listBall.Count; i++)
+        {
+            if (listBall[i] != null)
+            {
+                listBall[i].GetComponent<BallController>().Exploring();
+            }
+        }
+
+        listBall.Clear();
+
+        GameOver();
+    }
+
+    private void ResetRuntimeState()
+    {
+        StopAllCoroutines();
+        timerActive = false;
+        remainingGameTime = Mathf.Max(0f, initialGameDuration);
+        gameOver = false;
+
+        for (int i = 0; i < listBall.Count; i++)
+        {
+            if (listBall[i] != null)
+            {
+                Destroy(listBall[i]);
+            }
+        }
+
+        listBall.Clear();
+
+        if (currentTargetPoint != null)
+        {
+            currentTargetPoint.SetActive(false);
+            currentTargetPoint = null;
+        }
+
+        if (currentTarget != null)
+        {
+            Destroy(currentTarget);
+            currentTarget = null;
+        }
     }
 }
