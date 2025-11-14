@@ -18,16 +18,13 @@ namespace _1._Project.Scripts.Colliders
 
 		private Coroutine pulseRoutine;
 		private Vector3 baseScale;
-		private bool baseScaleCached;
 
 		private void Awake()
 		{
-			CacheBaseScale();
-		}
-
-		private void OnEnable()
-		{
-			CacheBaseScale();
+			if (OutPutTransform != null)
+			{
+				baseScale = OutPutTransform.localScale;
+			}
 		}
 
 		private void OnDisable()
@@ -42,7 +39,7 @@ namespace _1._Project.Scripts.Colliders
 				OnChocoTriggerEnter?.Invoke();
 				ball = other.transform.gameObject;
 				ball.SetActive(false);
-				StartPulseEffect();
+					StartPulseEffect();
 				StartCoroutine(WaitToRelease());
 			}
 		}
@@ -52,8 +49,8 @@ namespace _1._Project.Scripts.Colliders
 			yield return new WaitForSeconds(1f);
 			ball.transform.position = ChocoOutPosition.transform.position;
 			ball.SetActive(true);
-			StopPulseEffect();
-		}
+	                StopPulseEffect();
+		} 
 
 		private void StartPulseEffect()
 		{
@@ -78,7 +75,7 @@ namespace _1._Project.Scripts.Colliders
 				pulseRoutine = null;
 			}
 
-			if (OutPutTransform != null && baseScaleCached)
+			if (OutPutTransform != null)
 			{
 				OutPutTransform.localScale = baseScale;
 			}
@@ -91,29 +88,24 @@ namespace _1._Project.Scripts.Colliders
 				yield break;
 			}
 
-			CacheBaseScale();
+			if (baseScale == Vector3.zero)
+			{
+				baseScale = OutPutTransform.localScale;
+			}
 
 			float elapsed = 0f;
-			float duration = Mathf.Max(0.01f, pulseDuration);
-
 			while (true)
 			{
-				elapsed += Time.deltaTime;
-				float normalized = Mathf.PingPong(elapsed, duration) / duration;
-				OutPutTransform.localScale = Vector3.Lerp(baseScale, pulseScale, normalized);
-				yield return null;
-			}
-		}
+				while (elapsed < pulseDuration)
+				{
+					float t = Mathf.PingPong(elapsed, pulseDuration) / pulseDuration;
+					OutPutTransform.localScale = Vector3.Lerp(baseScale, pulseScale, t);
+					elapsed += Time.deltaTime;
+					yield return null;
+				}
 
-		private void CacheBaseScale()
-		{
-			if (OutPutTransform == null)
-			{
-				return;
+				elapsed = 0f;
 			}
-
-			baseScale = OutPutTransform.localScale;
-			baseScaleCached = true;
 		}
 	}
 }
