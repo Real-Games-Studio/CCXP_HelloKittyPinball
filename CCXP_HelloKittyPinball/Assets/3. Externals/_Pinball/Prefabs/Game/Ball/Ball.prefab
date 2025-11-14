@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5809050}
   - component: {fileID: 5040334}
   - component: {fileID: 11439708}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ball
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -165,4 +165,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc519d38b82767941b4db9bfed24e94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BallLaunchForce: 50
+  MinBallLaunchForce: 47
+  MaxBallLaunchForce: 52

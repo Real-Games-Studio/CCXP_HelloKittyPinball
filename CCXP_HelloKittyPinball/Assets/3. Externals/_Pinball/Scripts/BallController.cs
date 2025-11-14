@@ -12,6 +12,8 @@ public class BallController : MonoBehaviour
 
     public float MinBallLaunchForce = 47;
     public float MaxBallLaunchForce = 52;
+    [SerializeField]
+    private float maxSpeed = 25f;
     // Use this for initialization
     void Start()
     {
@@ -28,6 +30,16 @@ public class BallController : MonoBehaviour
     {
         var BallLaunchForce = Random.Range(MinBallLaunchForce, MaxBallLaunchForce);
         _rigidbody2D.AddForce(Vector2.up*BallLaunchForce, ForceMode2D.Impulse);
+    }
+
+    void FixedUpdate()
+    {
+        // Clamp velocity to keep impulse stacking from pushing the ball too fast.
+        var velocity = _rigidbody2D.linearVelocity;
+        if (velocity.sqrMagnitude > maxSpeed * maxSpeed)
+        {
+            _rigidbody2D.linearVelocity = velocity.normalized * maxSpeed;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D col)
