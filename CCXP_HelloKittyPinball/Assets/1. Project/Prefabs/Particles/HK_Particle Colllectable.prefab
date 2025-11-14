@@ -4904,7 +4904,7 @@ GameObject:
   - component: {fileID: 5178728844318605634}
   - component: {fileID: 8906909636953937765}
   m_Layer: 8
-  m_Name: HK_Particle
+  m_Name: HK_Particle Colllectable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4918,7 +4918,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8567730566259394190}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: -13.287, y: -1.706, z: 9.82}
   m_LocalScale: {x: 1.9017273, y: 1.9017273, z: 1.9017273}
   m_ConstrainProportionsScale: 0
@@ -4926,7 +4926,7 @@ Transform:
   - {fileID: 876872396015858202}
   - {fileID: 357590575484267474}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!198 &5086216227681956188
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -9880,16 +9880,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8895906001222044278}
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3696031, y: 0.3696031, z: 0.3696031}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6544312134383986014}
-  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.09, y: -1.73}
+  m_AnchoredPosition: {x: 1.0897, y: -1.0218}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &411028722330809867
@@ -9966,8 +9966,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 2449473535
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.5686275}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

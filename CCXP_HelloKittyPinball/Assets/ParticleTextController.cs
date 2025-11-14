@@ -59,11 +59,13 @@ public class ParticleTextController : MonoBehaviour
 
     private System.Collections.IEnumerator AnimateText()
     {
+
         Vector3 initialLocalPosition = baseLocalPosition;
         float elapsed = 0f;
 
         animatedTransform.localPosition = initialLocalPosition;
         pointText.color = baseColor;
+
 
         while (elapsed < animationDuration)
         {
@@ -86,7 +88,7 @@ public class ParticleTextController : MonoBehaviour
         Color finalColor = baseColor;
         finalColor.a = 0f;
         pointText.color = finalColor;
-
+        
         animateRoutine = null;
     }
 

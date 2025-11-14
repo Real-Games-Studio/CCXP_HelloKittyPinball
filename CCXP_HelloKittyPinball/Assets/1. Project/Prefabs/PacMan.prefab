@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 451097349311223830}
   - component: {fileID: 3733006832511240533}
   - component: {fileID: 2133839664106114157}
+  - component: {fileID: 5912744914362423980}
   m_Layer: 0
   m_Name: PacMan
-  m_TagString: Untagged
+  m_TagString: Gold
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5382348317318717962}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.612, y: 3.331, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
@@ -138,3 +139,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318513ec84b148b0b8c7f98231ece866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5912744914362423980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5382348317318717962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd608bb9e8e71a4cbb7008bc9b57299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 5
+  timeIfHitMultiplieScore: 1.5
+  hitEffectPrefab: {fileID: 8567730566259394190, guid: 02fe31e208c1a0947b1b06310b002951, type: 3}
+  spawnEffectOnHitPosition: 0
+  hitObjectTransform: {fileID: 8371882114290574431}
+  maxSizeEffect: 1.5
+  minSizeEffect: 0.5
+  scaleResetDuration: 0.2
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
