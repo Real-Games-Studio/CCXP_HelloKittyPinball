@@ -10,6 +10,12 @@ public class BallController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool isChecked;
 
+    [SerializeField]
+    private float idleSpeedThreshold = 0.1f;
+    [SerializeField]
+    private float idleDurationBeforeRespawn = 3f;
+    private float idleTimer;
+
     public float MinBallLaunchForce = 47;
     public float MaxBallLaunchForce = 52;
     [SerializeField]
@@ -30,6 +36,7 @@ public class BallController : MonoBehaviour
     {
         var BallLaunchForce = Random.Range(MinBallLaunchForce, MaxBallLaunchForce);
         _rigidbody2D.AddForce(Vector2.up*BallLaunchForce, ForceMode2D.Impulse);
+        idleTimer = 0f;
     }
 
     void FixedUpdate()
@@ -40,6 +47,8 @@ public class BallController : MonoBehaviour
         {
             _rigidbody2D.linearVelocity = velocity.normalized * maxSpeed;
         }
+
+        MonitorIdleState();
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -81,6 +90,40 @@ public class BallController : MonoBehaviour
         particle.Play();
         Destroy(particle.gameObject, 1f);
         Destroy(gameObject);
+    }
+
+    private void MonitorIdleState()
+    {
+        if (gameManager == null || gameManager.gameOver)
+        {
+            return;
+        }
+
+        float speed = _rigidbody2D.linearVelocity.magnitude;
+        if (speed <= idleSpeedThreshold)
+        {
+            idleTimer += Time.fixedDeltaTime;
+            if (idleTimer >= idleDurationBeforeRespawn)
+            {
+                ForceRespawn();
+            }
+        }
+        else
+        {
+            idleTimer = 0f;
+        }
+    }
+
+    private void ForceRespawn()
+    {
+        idleTimer = 0f;
+
+        if (gameManager != null)
+        {
+            gameManager.CheckGameOver(gameObject);
+        }
+
+        Exploring();
     }
 
 }

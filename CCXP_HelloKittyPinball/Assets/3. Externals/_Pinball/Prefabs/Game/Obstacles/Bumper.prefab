@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 410294}
   - component: {fileID: 21249096}
   - component: {fileID: 5850418}
+  - component: {fileID: -1959545391674960110}
   m_Layer: 0
   m_Name: Bumper
   m_TagString: Untagged
@@ -124,3 +125,30 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.0500426}
   m_Radius: 0.3799574
+--- !u!114 &-1959545391674960110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd608bb9e8e71a4cbb7008bc9b57299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 10
+  timeIfHitMultiplieScore: 1.5
+  hitEffectPrefab: {fileID: 8567730566259394190, guid: 02fe31e208c1a0947b1b06310b002951, type: 3}
+  hitObjectTransform: {fileID: 410294}
+  maxSizeEffect: 1.5
+  minSizeEffect: 0.5
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []

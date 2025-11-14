@@ -9,6 +9,7 @@ namespace _1._Project.Scripts.Colliders
 		public GameObject HelloKittyOutPosition;
 		public float TimeWaiting;
 		private GameObject _currentBall;
+		public Transform outputPosition;
 		
 		private void OnTriggerEnter2D(Collider2D other)
 		{
@@ -24,6 +25,7 @@ namespace _1._Project.Scripts.Colliders
 			_currentBall.SetActive(false);
 			yield return new WaitForSeconds(TimeWaiting);
 			_currentBall.transform.position = HelloKittyOutPosition.transform.position;
+			_currentBall.transform.position = outputPosition.position;
 			_currentBall.SetActive(true);
 		}
 	}

@@ -135,7 +135,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 4977733901702290963}
     m_Modifications:
     - target: {fileID: 357590575484267474, guid: 02fe31e208c1a0947b1b06310b002951, type: 3}
       propertyPath: m_LocalRotation.w
@@ -191,7 +191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2620234605439628358, guid: 02fe31e208c1a0947b1b06310b002951, type: 3}
       propertyPath: ShapeModule.radiusThickness
-      value: 1.0000
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2620234605439628358, guid: 02fe31e208c1a0947b1b06310b002951, type: 3}
       propertyPath: InitialModule.startSize.scalar
