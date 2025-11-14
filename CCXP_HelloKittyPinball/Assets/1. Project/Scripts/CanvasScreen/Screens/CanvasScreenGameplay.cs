@@ -8,6 +8,10 @@ public class CanvasScreenGameplay : CanvasScreen
     [SerializeField]private GameManager gameManager;
     public TMP_Text timerText;
     public TMP_Text scoreText;
+    [SerializeField][Min(0.001f)] private float scoreTickInterval = 0.02f;
+
+    private int displayedScore;
+    private float scoreTickTimer;
 
 
 
@@ -16,7 +20,7 @@ public class CanvasScreenGameplay : CanvasScreen
         if(IsOn())
         {
             timerText.SetText(gameManager.RemainingGameTime.ToString("F0"));
-            scoreText.SetText(ScoreManager.Instance.Score.ToString());
+            HandleScoreTick();
 
             if(gameManager.GameState == GameState.GameOver)
             {
@@ -25,5 +29,55 @@ public class CanvasScreenGameplay : CanvasScreen
             }
 
         }
+    }
+
+    private void Start()
+    {
+        if(ScoreManager.Instance != null)
+        {
+            displayedScore = ScoreManager.Instance.Score;
+        }
+        UpdateScoreLabel();
+    }
+
+    private void HandleScoreTick()
+    {
+        if(ScoreManager.Instance == null)
+        {
+            return;
+        }
+
+        int targetScore = ScoreManager.Instance.Score;
+
+        if(displayedScore >= targetScore)
+        {
+            if(displayedScore != targetScore)
+            {
+                displayedScore = targetScore;
+                UpdateScoreLabel();
+            }
+
+            scoreTickTimer = 0f;
+            return;
+        }
+
+        scoreTickTimer += Time.deltaTime;
+
+        while(scoreTickTimer >= scoreTickInterval && displayedScore < targetScore)
+        {
+            scoreTickTimer -= scoreTickInterval;
+            displayedScore++;
+            UpdateScoreLabel();
+        }
+    }
+
+    private void UpdateScoreLabel()
+    {
+        if(scoreText == null)
+        {
+            return;
+        }
+
+        scoreText.SetText(displayedScore.ToString());
     }
 }
