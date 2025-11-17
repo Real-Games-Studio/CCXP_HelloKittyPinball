@@ -77,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1201004359
+  m_SortingLayer: 4
   m_SortingOrder: 1000
   m_Sprite: {fileID: 21300000, guid: a7593545ed25d8046b96ba2eaf7e8066, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -170,7 +170,8 @@ MonoBehaviour:
   idleDurationBeforeRespawn: 3
   MinBallLaunchForce: 47
   MaxBallLaunchForce: 52
-  maxSpeed: 20
+  maxSpeed: 40
+  _maxSpeedAfterStart: 30
 --- !u!1 &2854121608711328477
 GameObject:
   m_ObjectHideFlags: 0

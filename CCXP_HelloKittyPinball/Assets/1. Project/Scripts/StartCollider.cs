@@ -10,14 +10,18 @@ namespace _1._Project.Scripts
 		{
 			if (other.CompareTag("Player"))
 			{
-				StartCoroutine(WaitToTurnOn());
+				other.GetComponent<BallController>().MaxSpeedReset();
 			}
 		}
 
-		private IEnumerator WaitToTurnOn()
+		private void OnCollisionEnter2D(Collision2D other)
 		{
-			yield return new WaitForSeconds(0.5f);
-			ballCollider.SetActive(true);
+			if (other.gameObject.CompareTag("Player"))
+			{
+				other.gameObject.GetComponent<BallController>().MaxSpeedReset();
+			}
 		}
+
+		
 	}
 }

@@ -37,6 +37,7 @@ public class ParticleTextController : MonoBehaviour
     
     private void Awake()
     {
+        animatedTransform = pointText.GetComponent<Transform>();
         EnsureInitialized();
     }
 

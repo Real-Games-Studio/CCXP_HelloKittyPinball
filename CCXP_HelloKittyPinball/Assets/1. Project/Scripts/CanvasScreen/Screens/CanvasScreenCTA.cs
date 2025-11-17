@@ -20,6 +20,12 @@ public class CanvasScreenCTA : CanvasScreen
 
     private Coroutine stageRoutine;
     private int currentStageIndex = -1;
+    [SerializeField, Min(0f)]
+    private float comboTolerance = 0.25f;
+
+    private float lastAPressTime = float.NegativeInfinity;
+    private float lastDPressTime = float.NegativeInfinity;
+    private bool comboConsumed;
 
     private void Awake()
     {
@@ -39,6 +45,10 @@ public class CanvasScreenCTA : CanvasScreen
         {
             StopCoroutine(stageRoutine);
         }
+
+        comboConsumed = false;
+        lastAPressTime = float.NegativeInfinity;
+        lastDPressTime = float.NegativeInfinity;
 
         if (callToActionStages.Count == 0)
         {
@@ -60,6 +70,10 @@ public class CanvasScreenCTA : CanvasScreen
 
         currentStageIndex = -1;
         DeactivateAllInstructions();
+
+        comboConsumed = false;
+        lastAPressTime = float.NegativeInfinity;
+        lastDPressTime = float.NegativeInfinity;
 
         base.TurnOff();
 
@@ -146,15 +160,32 @@ public class CanvasScreenCTA : CanvasScreen
             return;
         }
 
-        bool comboHeld = Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D);
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            lastAPressTime = Time.unscaledTime;
+        }
 
-        if (comboHeld && CanTriggerGameStart())
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            lastDPressTime = Time.unscaledTime;
+        }
+
+        bool comboHeld = Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D);
+        // Treat quick sequential taps as a combo if both keys were hit within the tolerance window.
+        bool comboWithinTolerance = Mathf.Abs(lastAPressTime - lastDPressTime) <= comboTolerance &&
+            (Time.unscaledTime - Mathf.Max(lastAPressTime, lastDPressTime)) <= comboTolerance;
+        bool comboDetected = comboHeld || comboWithinTolerance;
+
+        if (comboDetected && CanTriggerGameStart() && !comboConsumed)
         {
             Debug.Log("Combo held, starting game...");
             gameManager.StartGame();
             gameManager.CreateBall();
 
             CallNextScreen();
+            comboConsumed = true;
+            lastAPressTime = float.NegativeInfinity;
+            lastDPressTime = float.NegativeInfinity;
         }
     }
 }

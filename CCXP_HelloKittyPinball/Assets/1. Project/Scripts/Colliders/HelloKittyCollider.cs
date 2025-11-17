@@ -10,7 +10,8 @@ namespace _1._Project.Scripts.Colliders
 		public float TimeWaiting;
 		private GameObject _currentBall;
 		public Transform outputPosition;
-		
+		public Vector3 MinForce;
+		public Vector3 MaxForce;
 		private void OnTriggerEnter2D(Collider2D other)
 		{
 			if (other.CompareTag("Player"))
@@ -27,6 +28,11 @@ namespace _1._Project.Scripts.Colliders
 			_currentBall.transform.position = HelloKittyOutPosition.transform.position;
 			_currentBall.transform.position = outputPosition.position;
 			_currentBall.SetActive(true);
+			var ballForce = new Vector3(
+				x:UnityEngine.Random.Range(MinForce.x, MaxForce.x),
+				y:UnityEngine.Random.Range(MinForce.y, MaxForce.y),
+				z:UnityEngine.Random.Range(MinForce.z, MaxForce.z));
+			_currentBall.GetComponent<Rigidbody2D>().AddRelativeForce(ballForce);
 		}
 	}
 }

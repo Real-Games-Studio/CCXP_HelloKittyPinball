@@ -20,6 +20,9 @@ public class BallController : MonoBehaviour
     public float MaxBallLaunchForce = 52;
     [SerializeField]
     private float maxSpeed = 25f;
+
+    [SerializeField]
+    private float _maxSpeedAfterStart = 25f;
     // Use this for initialization
     void Start()
     {
@@ -32,6 +35,10 @@ public class BallController : MonoBehaviour
         ShootUp();
     }
 
+    public void MaxSpeedReset()
+    {
+        maxSpeed  = _maxSpeedAfterStart;
+    }
     public void ShootUp()
     {
         var BallLaunchForce = Random.Range(MinBallLaunchForce, MaxBallLaunchForce);

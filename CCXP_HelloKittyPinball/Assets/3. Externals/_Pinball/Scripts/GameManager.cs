@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using SgLib;
 using System.Collections.Generic;
 using System;
+using _1._Project.Scripts;
 
 public enum GameState
 {
@@ -47,7 +48,6 @@ public class GameManager : MonoBehaviour
     public GameState _gameState = GameState.Prepare;
     
     [Header("Gameplay References")] 
-    public GameObject ballColliderStart;
     public GameObject ballPrefab;
     public GameObject ballPoint;
     public GameObject obstacleManager;
@@ -221,7 +221,6 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-        ballColliderStart.SetActive(false);
         GameObject ball = Instantiate(ballPrefab, ballPoint.transform.position, Quaternion.identity) as GameObject;
         listBall.Add(ball);
     }
@@ -246,38 +245,38 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void CheckAndUpdateValue()
     {
-        if (ScoreManager.Instance.Score % scoreToIncreaseDifficulty == 0)
-        {
-            //Change background element color
-            Color color = backgroundColor[UnityEngine.Random.Range(0, backgroundColor.Length)];
-            ushapeSpriteRenderer.color = color;
-            backgroundSpriteRenderer.color = color;
-            fenceSpriteRenderer.color = color;
-            leftFlipperSpriteRenderer.color = color;
-            rightFlipperSpriteRenderer.color = color;
-
-            //Enable obstacles
-            if (obstacleCounter < obstacleManager.transform.childCount)
-            {
-                obstacleManager.transform.GetChild(obstacleCounter).gameObject.SetActive(true);
-                obstacleCounter++;
-            }
-
-            //Update processing time
-            if (targetAliveTime > minTargetAliveTime)
-            {
-                targetAliveTime -= targetAliveTimeDecreaseValue;
-            }
-            else
-            {
-                targetAliveTime = minTargetAliveTime;
-            }
-        }
-
-        if (ScoreManager.Instance.Score % scoreToAddedBall == 0)
-        {
-            CreateBall();
-        }
+        //if (ScoreManager.Instance.Score % scoreToIncreaseDifficulty == 0)
+        //{
+        //    //Change background element color
+        //    Color color = backgroundColor[UnityEngine.Random.Range(0, backgroundColor.Length)];
+        //    ushapeSpriteRenderer.color = color;
+        //    backgroundSpriteRenderer.color = color;
+        //    fenceSpriteRenderer.color = color;
+        //    leftFlipperSpriteRenderer.color = color;
+        //    rightFlipperSpriteRenderer.color = color;
+        //
+        //    //Enable obstacles
+        //    if (obstacleCounter < obstacleManager.transform.childCount)
+        //    {
+        //        obstacleManager.transform.GetChild(obstacleCounter).gameObject.SetActive(true);
+        //        obstacleCounter++;
+        //    }
+        //
+        //    //Update processing time
+        //    if (targetAliveTime > minTargetAliveTime)
+        //    {
+        //        targetAliveTime -= targetAliveTimeDecreaseValue;
+        //    }
+        //    else
+        //    {
+        //        targetAliveTime = minTargetAliveTime;
+        //    }
+        //}
+        //
+        //if (ScoreManager.Instance.Score % scoreToAddedBall == 0)
+        //{
+        //    //CreateBall();
+        //}
     }
 
     IEnumerator Processing()

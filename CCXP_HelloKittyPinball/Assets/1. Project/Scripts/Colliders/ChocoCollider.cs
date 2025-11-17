@@ -9,6 +9,7 @@ namespace _1._Project.Scripts.Colliders
 	{
 		public GameObject ball;
 		public GameObject ChocoOutPosition;
+		public Vector3 Force;
 
 		public Transform OutPutTransform;
 		public Vector3 pulseScale = new Vector3(1.2f, 1.2f, 1f);
@@ -49,6 +50,7 @@ namespace _1._Project.Scripts.Colliders
 			yield return new WaitForSeconds(1f);
 			ball.transform.position = ChocoOutPosition.transform.position;
 			ball.SetActive(true);
+			ball.GetComponent<Rigidbody2D>().AddRelativeForce(Force);
 	                StopPulseEffect();
 		} 
 

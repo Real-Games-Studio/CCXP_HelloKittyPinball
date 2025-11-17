@@ -59,7 +59,7 @@ public class ScoreManager : MonoBehaviour
         Score += amount;
 
         // Fire event
-        ScoreUpdated(Score);
+        //ScoreUpdated(Score);
     }
 
     public void Reset()
