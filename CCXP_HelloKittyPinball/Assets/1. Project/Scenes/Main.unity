@@ -1282,6 +1282,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208116652}
   m_CullTransparentMesh: 1
+--- !u!1 &214118706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 214118707}
+  - component: {fileID: 214118708}
+  m_Layer: 0
+  m_Name: RawInput
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &214118707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214118706}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1085160059}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &214118708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214118706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07fb808e1b2741de8c2626daf1a24dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnRawKeyInputEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &236668902
 GameObject:
   m_ObjectHideFlags: 0
@@ -5607,6 +5654,7 @@ Transform:
   - {fileID: 183065752}
   - {fileID: 1716321951}
   - {fileID: 1230418889}
+  - {fileID: 214118707}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1089396781
@@ -11025,6 +11073,8 @@ MonoBehaviour:
   initialGameDuration: 60
   leftFlipperKey: 97
   rightFlipperKey: 100
+  leftFlipperRawKey: 65
+  rightFlipperRawKey: 68
 --- !u!4 &1716321951
 Transform:
   m_ObjectHideFlags: 0
@@ -13800,8 +13850,8 @@ PolygonCollider2D:
       - {x: 2.6399999, y: 1.685}
       - {x: 2.69, y: 1.655}
       - {x: 2.72, y: 1.655}
-      - {x: 2.74, y: 1.685}
-      - {x: 2.74, y: 1.7149999}
+      - {x: 2.8341734, y: 1.6714325}
+      - {x: 2.7472453, y: 1.7174151}
       - {x: 2.72, y: 1.8349999}
   m_UseDelaunayMesh: 0
 --- !u!1001 &2050178288

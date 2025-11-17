@@ -5,6 +5,7 @@ using SgLib;
 using System.Collections.Generic;
 using System;
 using _1._Project.Scripts;
+using UnityRawInput;
 
 public enum GameState
 {
@@ -94,12 +95,57 @@ public class GameManager : MonoBehaviour
     private bool _lastRoudnRightFlipperActive;
     public KeyCode leftFlipperKey = KeyCode.A;
     public KeyCode rightFlipperKey = KeyCode.D;
+    public RawKey leftFlipperRawKey = RawKey.A;
+    public RawKey rightFlipperRawKey = RawKey.D;
 
     private float remainingGameTime;
     private bool timerActive;
 
     public float RemainingGameTime => Mathf.Max(0f, remainingGameTime);
-   
+
+    private void Awake()
+    {
+        RawInput.WorkInBackground = true;
+        RawInput.InterceptMessages = false;
+        RawInput.OnKeyDown += RawInputOnOnKeyDownHandler;
+        RawInput.OnKeyUp += RawInputOnOnKeyUpHandler;
+        RawInput.Start();
+    }
+
+    private void OnDestroy()
+    {
+        RawInput.WorkInBackground = true;
+        RawInput.InterceptMessages = false;
+        RawInput.OnKeyDown -= RawInputOnOnKeyDownHandler;
+        RawInput.OnKeyUp -= RawInputOnOnKeyUpHandler;
+        RawInput.Stop();
+    }
+
+    private void RawInputOnOnKeyDownHandler(RawKey obj)
+    {
+        if (obj == leftFlipperRawKey)
+        {
+            _leftFlipperActive = true;
+        }
+        if (obj == rightFlipperRawKey)
+        {
+            _rightFlipperActive = true;
+        }
+    }
+    
+    private void RawInputOnOnKeyUpHandler(RawKey obj)
+    {
+        if (obj == leftFlipperRawKey)
+        {
+            _leftFlipperActive = false;
+            _lastRoudnLeftFlipperActive = false;
+        }
+        if (obj == rightFlipperRawKey)
+        {
+            _rightFlipperActive = false;
+            _lastRoudnRightFlipperActive = false;
+        }
+    }
     // Use this for initialization
     void Start()
     {
@@ -133,24 +179,24 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(leftFlipperKey))
-        {
-            _leftFlipperActive = true;
-        }
-        if (Input.GetKeyDown(rightFlipperKey))
-        {
-            _rightFlipperActive = true;
-        }
-        if (Input.GetKeyUp(leftFlipperKey))
-        {
-            _leftFlipperActive = false;
-            _lastRoudnLeftFlipperActive = false;
-        }
-        if (Input.GetKeyUp(rightFlipperKey))
-        {
-            _rightFlipperActive = false;
-            _lastRoudnRightFlipperActive = false;
-        }
+        //if (Input.GetKeyDown(leftFlipperKey))
+        //{
+        //    _leftFlipperActive = true;
+        //}
+        //if (Input.GetKeyDown(rightFlipperKey))
+        //{
+        //    _rightFlipperActive = true;
+        //}
+        //if (Input.GetKeyUp(leftFlipperKey))
+        //{
+        //    _leftFlipperActive = false;
+        //    _lastRoudnLeftFlipperActive = false;
+        //}
+        //if (Input.GetKeyUp(rightFlipperKey))
+        //{
+        //    _rightFlipperActive = false;
+        //    _lastRoudnRightFlipperActive = false;
+        //}
             if (_leftFlipperActive)
             {
                 if (!_lastRoudnLeftFlipperActive)
