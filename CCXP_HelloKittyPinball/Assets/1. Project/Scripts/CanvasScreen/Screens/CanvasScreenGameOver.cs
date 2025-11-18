@@ -6,6 +6,7 @@ using UnityEngine;
 public class CanvasScreenGameOver : CanvasScreen
 {
    [SerializeField] private float gameOverDisplaytime = 2.0f;
+   [SerializeField] private float gameOverDisplaytime_EDITOR = 10f;
    [SerializeField]private GameManager gameManager;
    [SerializeField] public TMP_Text finalMessageText; // deve sortear uma das mensagens finais
    [SerializeField] public List<string> finalMessages;
@@ -37,8 +38,12 @@ public class CanvasScreenGameOver : CanvasScreen
 
      }
 
-
+#if UNITY_EDITOR
+       Invoke("CallNextScreen", gameOverDisplaytime_EDITOR);
+#else
        Invoke("CallNextScreen", gameOverDisplaytime);
+       
+#endif
    }
 
    override public void TurnOff()

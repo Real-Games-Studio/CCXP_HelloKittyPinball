@@ -18,28 +18,28 @@ namespace _1._Project.Scripts.Collectables
 					AmountOnRow1--;
 					if (AmountOnRow1<=0)
 					{
-						GameManager.CreateBall();
+						//GameManager.CreateBall();
 					}
 					break;
 				case 2:
 					AmountOnRow2--;
 					if (AmountOnRow2<=0)
 					{
-						GameManager.CreateBall();
+						//GameManager.CreateBall();
 					}
 					break;
 				case 3:
 					AmountOnRow3--;
 					if (AmountOnRow3<=0)
 					{
-						GameManager.CreateBall();
+						//GameManager.CreateBall();
 					}
 					break;
 				case 4:
 					AmountOnRow4--;
 					if (AmountOnRow4<=0)
 					{
-						GameManager.CreateBall();
+						//GameManager.CreateBall();
 					}
 					break;
 			}

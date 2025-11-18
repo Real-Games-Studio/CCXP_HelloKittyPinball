@@ -71,6 +71,8 @@ public class GameManager : MonoBehaviour
     public int minTargetAliveTime = 3;
     public int scoreToAddedBall = 15;
     public float BallLaunchForce = 15f;
+    public int MaxAmountOfBallsInTotal = 2;
+    public int MaxAmountOfBallsConcurrently = 2;
     [Tooltip("Automatically start gameplay when the scene loads")]
     public bool startOnSceneLoad = false;
 
@@ -263,7 +265,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void CreateBall()
     {
-        if (gameOver)
+        if (gameOver || listBall.Count >= MaxAmountOfBallsInTotal)
         {
             return;
         }
@@ -280,7 +282,7 @@ public class GameManager : MonoBehaviour
         //remove the ball from the list
         listBall.Remove(ball);
 
-        if (!gameOver)
+        if (!gameOver && listBall.Count < MaxAmountOfBallsConcurrently)
         {
             CreateBall();
         }

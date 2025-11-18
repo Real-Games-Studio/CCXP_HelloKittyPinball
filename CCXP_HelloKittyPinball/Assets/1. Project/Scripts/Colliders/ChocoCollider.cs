@@ -38,15 +38,14 @@ namespace _1._Project.Scripts.Colliders
 			if (other.CompareTag("Player"))
 			{
 				OnChocoTriggerEnter?.Invoke();
-				ball = other.transform.gameObject;
-				ball.SetActive(false);
-					StartPulseEffect();
-				StartCoroutine(WaitToRelease());
+				StartCoroutine(WaitToRelease(other.transform.gameObject));
 			}
 		}
 
-		private IEnumerator WaitToRelease()
+		private IEnumerator WaitToRelease(GameObject ball)
 		{
+			ball.SetActive(false);
+			StartPulseEffect();
 			yield return new WaitForSeconds(1f);
 			ball.transform.position = ChocoOutPosition.transform.position;
 			ball.SetActive(true);

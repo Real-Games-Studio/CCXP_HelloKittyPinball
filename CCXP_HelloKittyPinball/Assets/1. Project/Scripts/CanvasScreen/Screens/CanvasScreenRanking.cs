@@ -7,6 +7,7 @@ public class CanvasScreenRanking : CanvasScreen
 {
 
     [SerializeField] private float displayDuration = 5f; // no final deve chamar outra tela
+    [SerializeField] private float displayDuration_EDITOR = 10f; // no final deve chamar outra tela
     [SerializeField] private TMP_Text firstPlaceText;
     [SerializeField] private TMP_Text secondPlaceText;      
     [SerializeField] private TMP_Text thirdPlaceText;
@@ -21,7 +22,13 @@ public class CanvasScreenRanking : CanvasScreen
         base.TurnOn();
 
         UpdateRankingDisplay();
-        Invoke("ResetGame", displayDuration);
+        
+#if UNITY_EDITOR
+        Invoke("CallNextScreen", displayDuration_EDITOR);
+#else
+       Invoke("CallNextScreen", displayDuration);
+       
+#endif
     }
 
 

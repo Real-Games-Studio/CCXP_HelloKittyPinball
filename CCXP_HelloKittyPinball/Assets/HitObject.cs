@@ -294,7 +294,10 @@ public class HitObject : MonoBehaviour
             StopCoroutine(scaleRoutine);
         }
 
-        scaleRoutine = StartCoroutine(ScaleEffectRoutine(multiplier));
+        if (gameObject.activeInHierarchy)
+        {
+            scaleRoutine = StartCoroutine(ScaleEffectRoutine(multiplier));
+        }
     }
 
     private IEnumerator ScaleEffectRoutine(float targetMultiplier)
