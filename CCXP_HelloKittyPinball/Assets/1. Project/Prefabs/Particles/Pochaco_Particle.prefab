@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3339353103045310214}
   - component: {fileID: 7580936874617356001}
   m_Layer: 8
-  m_Name: Purim_Particle
+  m_Name: Pochaco_Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
