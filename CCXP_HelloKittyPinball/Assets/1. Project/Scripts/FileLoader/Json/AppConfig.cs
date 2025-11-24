@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace RealGames
 {
     [System.Serializable]
@@ -5,5 +7,7 @@ namespace RealGames
     {
         public string applicationName;
         public int maxInactiveTime;
+        public bool RankingDiario;
+        
     }
 }

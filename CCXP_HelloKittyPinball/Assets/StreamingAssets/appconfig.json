@@ -1,4 +1,5 @@
 {
-  "applicationName": "MyApp",
-  "maxInactiveTime": 300
+  "applicationName": "Hello Kitty",
+  "maxInactiveTime": 300,
+  "RankingDiario" : 0
 }

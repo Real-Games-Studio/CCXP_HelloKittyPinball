@@ -1,4 +1,7 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
+using RealGames;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -40,6 +43,16 @@ public class CanvasScreenRanking : CanvasScreen
         ResetGame();
     }
 
+    private void Start()
+    {
+        GetDailyFromJson();
+    }
+
+    private void GetDailyFromJson()
+    {
+        var json = JsonLoader.LoadGameSettings(Path.Combine(Application.streamingAssetsPath, "appconfig.json"));
+        displayDaylyRanking =json.RankingDiario;
+    }
 
     void ResetGame()
     {

@@ -178,7 +178,6 @@ public class CanvasScreenCTA : CanvasScreen
 
         if (comboDetected && CanTriggerGameStart() && !comboConsumed)
         {
-            Debug.Log("Combo held, starting game...");
             gameManager.StartGame();
             gameManager.CreateBall();
 
