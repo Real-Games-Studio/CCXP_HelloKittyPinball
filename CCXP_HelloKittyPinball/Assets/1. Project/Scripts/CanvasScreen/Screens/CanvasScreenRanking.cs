@@ -31,6 +31,11 @@ public class CanvasScreenRanking : CanvasScreen
 #endif
     }
 
+    public override void CallNextScreen()
+    {
+        ResetGame();
+    }
+
 
     void ResetGame()
     {

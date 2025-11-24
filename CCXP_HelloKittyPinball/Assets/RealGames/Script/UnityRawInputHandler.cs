@@ -23,10 +23,8 @@ namespace RealGames.Script
 
         private void RawInputOnOnKeyDownHandler(RawKey obj)
         {            
-            Debug.Log(obj);
             if (obj is >= RawKey.A and <= RawKey.Z)
             {
-                Debug.Log(obj);
             }
         }
 
