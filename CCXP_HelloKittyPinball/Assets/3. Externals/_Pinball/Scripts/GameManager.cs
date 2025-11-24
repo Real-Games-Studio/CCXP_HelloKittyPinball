@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
     [Tooltip("Total play time in seconds before the session ends")]
     public float initialGameDuration = 60f;
 
-    private List<GameObject> listBall = new List<GameObject>();
+    internal List<GameObject> listBall = new List<GameObject>();
     private Rigidbody2D leftFlipperRigid;
     private Rigidbody2D rightFlipperRigid;
     private SpriteRenderer ushapeSpriteRenderer;

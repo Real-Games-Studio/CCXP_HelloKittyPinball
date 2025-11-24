@@ -139,6 +139,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318513ec84b148b0b8c7f98231ece866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onCollectedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  RowId: 0
 --- !u!114 &5912744914362423980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreValue: 5
   timeIfHitMultiplieScore: 1.5
-  hitEffectPrefab: {fileID: 8567730566259394190, guid: 02fe31e208c1a0947b1b06310b002951, type: 3}
+  hitEffectPrefab: {fileID: 0}
   spawnEffectOnHitPosition: 0
   hitObjectTransform: {fileID: 8371882114290574431}
   maxSizeEffect: 1.5

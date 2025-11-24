@@ -2,13 +2,14 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 namespace _1._Project.Scripts.Colliders
 {
 	public class ChocoCollider : MonoBehaviour
 	{
-		public GameObject ball;
-		public GameObject ChocoOutPosition;
+		public GameObject ChocoOutPosition1;
+		public GameObject ChocoOutPosition2;
 		public Vector3 Force;
 
 		public Transform OutPutTransform;
@@ -47,11 +48,14 @@ namespace _1._Project.Scripts.Colliders
 			ball.SetActive(false);
 			StartPulseEffect();
 			yield return new WaitForSeconds(1f);
+			var r = Random.Range(0, 2);
+			var ChocoOutPosition = r == 0 ? ChocoOutPosition1 : ChocoOutPosition2;
 			ball.transform.position = ChocoOutPosition.transform.position;
+			ball.transform.localEulerAngles = Vector3.zero;
 			ball.SetActive(true);
 			ball.GetComponent<Rigidbody2D>().AddRelativeForce(Force);
-	                StopPulseEffect();
-		} 
+			StopPulseEffect();
+		}
 
 		private void StartPulseEffect()
 		{

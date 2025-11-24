@@ -15,7 +15,11 @@ public class CanvasScreenRanking : CanvasScreen
     [SerializeField] private TMP_Text matchPositionText;
     [SerializeField] private TMP_Text matchScoreText;
     [SerializeField] private bool displayDaylyRanking = false;
-    
+    [SerializeField] private GameObject arrows;
+    [SerializeField] private GameObject arrowsPos1;
+    [SerializeField] private GameObject arrowsPos2;
+    [SerializeField] private GameObject arrowsPos3;
+    [SerializeField] private GameObject arrowsPosDefault;
 
     public override void TurnOn()
     {
@@ -112,6 +116,21 @@ public class CanvasScreenRanking : CanvasScreen
             return;
         }
 
+        switch (position)
+        {
+            case 1:
+                arrows.transform.localPosition = arrowsPos1.transform.localPosition;
+                break;
+            case 2:
+                arrows.transform.localPosition = arrowsPos2.transform.localPosition;
+                break;
+            case 3:
+                arrows.transform.localPosition =  arrowsPos3.transform.localPosition;
+                break;
+            default:
+                arrows.transform.localPosition = arrowsPosDefault.transform.localPosition;
+                break;
+        }
         matchPositionText.SetText(position.HasValue && position.Value > 0 ? $"{position.Value}" : "-");
     }
 
