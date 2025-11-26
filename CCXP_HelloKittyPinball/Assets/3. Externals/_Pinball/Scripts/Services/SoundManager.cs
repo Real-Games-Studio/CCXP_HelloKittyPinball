@@ -21,7 +21,8 @@ namespace SgLib
         public int maxSimultaneousSounds = 7;
 
         public Sound clickButton;
-        public Sound flipping;
+        public Sound flippingRight;
+        public Sound flippingLeft;
         public Sound hitGold;
         public Sound eploring;
         public Sound gameOver;

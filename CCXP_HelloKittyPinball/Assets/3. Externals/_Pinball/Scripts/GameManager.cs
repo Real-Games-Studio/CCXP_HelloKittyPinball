@@ -204,7 +204,7 @@ public class GameManager : MonoBehaviour
                 if (!_lastRoudnLeftFlipperActive)
                 {
                     _lastRoudnLeftFlipperActive = true;
-                    SoundManager.Instance.PlaySound(SoundManager.Instance.flipping);
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.flippingLeft);
                 }
                 AddTorque(leftFlipperRigid, torqueForce);
             }
@@ -213,7 +213,7 @@ public class GameManager : MonoBehaviour
                 if (!_lastRoudnRightFlipperActive)
                 {
                     _lastRoudnRightFlipperActive = true;
-                    SoundManager.Instance.PlaySound(SoundManager.Instance.flipping);
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.flippingRight);
                 }
                 AddTorque(rightFlipperRigid, -torqueForce);
             }

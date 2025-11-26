@@ -24,6 +24,7 @@ public class CanvasScreenRanking : CanvasScreen
     [SerializeField] private GameObject arrowsPos3;
     [SerializeField] private GameObject arrowsPosDefault;
 
+    public AudioSource EndAudioSource;
     public override void TurnOn()
     {
         base.TurnOn();
@@ -36,6 +37,15 @@ public class CanvasScreenRanking : CanvasScreen
        Invoke("CallNextScreen", displayDuration);
        
 #endif
+    }
+
+    public override void TurnOff()
+    {
+        if (EndAudioSource != null)
+        {
+            EndAudioSource.Stop();
+        }
+        base.TurnOff();
     }
 
     public override void CallNextScreen()
@@ -144,7 +154,7 @@ public class CanvasScreenRanking : CanvasScreen
                 arrows.transform.localPosition = arrowsPosDefault.transform.localPosition;
                 break;
         }
-        matchPositionText.SetText(position.HasValue && position.Value > 0 ? $"{position.Value}" : "-");
+        matchPositionText.SetText(position.HasValue && position.Value > 0 ? $"{position.Value}" : "");
     }
 
     private void ClearRankingTexts()
