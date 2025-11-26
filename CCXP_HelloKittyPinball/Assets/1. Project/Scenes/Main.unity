@@ -423,7 +423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8567730566259394190, guid: 02fe31e208c1a0947b1b06310b002951, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8895906001222044278, guid: 02fe31e208c1a0947b1b06310b002951, type: 3}
       propertyPath: m_IsActive
@@ -9302,6 +9302,10 @@ PrefabInstance:
     - target: {fileID: 5608694107535944337, guid: 28fae5d2d06cdcb4eb9a2b71db73af2e, type: 3}
       propertyPath: m_Name
       value: CinammonRoll_Particle 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5608694107535944337, guid: 28fae5d2d06cdcb4eb9a2b71db73af2e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
