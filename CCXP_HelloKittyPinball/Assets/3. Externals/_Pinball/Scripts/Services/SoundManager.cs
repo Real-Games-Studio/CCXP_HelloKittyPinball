@@ -13,6 +13,7 @@ namespace SgLib
         public class Sound
         {
             public AudioClip clip;
+            public float volume=1;
             [HideInInspector]
             public int simultaneousPlayCount = 0;
         }

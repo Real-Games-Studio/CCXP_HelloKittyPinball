@@ -8,6 +8,11 @@ namespace _1._Project.Scripts.Colliders
 {
 	public class ChocoTrigger : TriggerBaseClass
 	{
+		
+		[SerializeField] private int scoreValue = 10;
+		[SerializeField] private float timeIfHitMultiplieScore = 1.5f; // valor decresivo, caso o objeto seja acertado novamente em um curto espaço de tempo a pontuação será maior (x2)
+		[SerializeField] private GameObject hitEffectPrefab; // esse prefab deve ser uma particula, e ela pode conter o ParticleTextController
+
 		public GameObject ChocoOutPosition1;
 		public GameObject ChocoOutPosition2;
 		public Vector3 Force;
@@ -20,6 +25,8 @@ namespace _1._Project.Scripts.Colliders
 
 		private Coroutine pulseRoutine;
 		private Vector3 baseScale;
+		private float lastHitTime = float.NegativeInfinity;
+		private bool hasBeenHit;
 
 		public void Start()
 		{
@@ -56,9 +63,42 @@ namespace _1._Project.Scripts.Colliders
 			ball.SetActive(true);
 			PlaySoundWithClip(ExitClip);
 			ball.GetComponent<Rigidbody2D>().AddRelativeForce(Force);
+			
+			int awardedScore = CalculateScore();
+
+			if (ScoreManager.Instance != null)
+			{
+				ScoreManager.Instance.AddScore(awardedScore);
+			}
+			SpawnHitEffect(awardedScore);
 			StopPulseEffect();
 		}
 
+		
+		private int CalculateScore()
+		{
+			float now = Time.time;
+			float multiplier = 1f;
+
+			if (hasBeenHit)
+			{
+				float elapsed = now - lastHitTime;
+				if (elapsed <= 0f)
+				{
+					multiplier = 2f;
+				}
+				else if (timeIfHitMultiplieScore > 0f && elapsed < timeIfHitMultiplieScore)
+				{
+					float normalized = Mathf.Clamp01(elapsed / timeIfHitMultiplieScore);
+					multiplier = Mathf.Lerp(2f, 1f, normalized); // decaimento linear do multiplicador
+				}
+			}
+
+			hasBeenHit = true;
+			lastHitTime = now;
+
+			return Mathf.RoundToInt(scoreValue * multiplier);
+		}
 		private void StartPulseEffect()
 		{
 			if (OutPutTransform == null)
@@ -87,6 +127,30 @@ namespace _1._Project.Scripts.Colliders
 				OutPutTransform.localScale = baseScale;
 			}
 		}
+		
+		private void SpawnHitEffect(int awardedScore)
+		{
+			if (!hitEffectPrefab)
+			{
+				return;
+			}
+
+			Vector3 spawnPosition;
+				spawnPosition = new Vector3(OutPutTransform.transform.position.x, OutPutTransform.transform.position.y, -1f);
+
+			GameObject effectInstance = Instantiate(hitEffectPrefab, spawnPosition, this.transform.rotation);
+
+			ParticleTextController textController = effectInstance.GetComponentInChildren<ParticleTextController>();
+			if (textController != null)
+			{
+				textController.SetPointText(awardedScore);
+			}
+
+			if (!TryScheduleDestroy(effectInstance))
+			{
+				Destroy(effectInstance, 2f);
+			}
+		}
 
 		private IEnumerator PulseRoutine()
 		{
@@ -113,6 +177,30 @@ namespace _1._Project.Scripts.Colliders
 
 				elapsed = 0f;
 			}
+		}
+		
+		
+		private bool TryScheduleDestroy(GameObject effectInstance)
+		{
+			ParticleSystem[] particleSystems = effectInstance.GetComponentsInChildren<ParticleSystem>();
+			if (particleSystems.Length == 0)
+			{
+				return false;
+			}
+
+			float maxLifetime = 0f;
+			foreach (ParticleSystem particleSystem in particleSystems)
+			{
+				ParticleSystem.MainModule main = particleSystem.main;
+				float lifetime = main.duration + main.startLifetime.constantMax;
+				if (lifetime > maxLifetime)
+				{
+					maxLifetime = lifetime;
+				}
+			}
+
+			Destroy(effectInstance, maxLifetime);
+			return true;
 		}
 	}
 }

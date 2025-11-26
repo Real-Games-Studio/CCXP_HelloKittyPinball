@@ -72,6 +72,7 @@ public class BallController : MonoBehaviour
     {
         if (other.CompareTag("Gold") && !gameManager.gameOver)
         {
+            Debug.Log(other.name);
             SoundManager.Instance.PlaySound(SoundManager.Instance.hitGold);
             ScoreManager.Instance.AddScore(1);
             gameManager.CheckAndUpdateValue();

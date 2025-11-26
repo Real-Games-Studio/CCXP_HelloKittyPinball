@@ -30,7 +30,6 @@ public class CanvasScreenGameplay : CanvasScreen
                     Invoke("CallNextScreen", 1f);
                 }
             }
-
         }
     }
 

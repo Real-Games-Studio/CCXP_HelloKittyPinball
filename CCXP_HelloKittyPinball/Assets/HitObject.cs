@@ -133,8 +133,6 @@ public class HitObject : MonoBehaviour
 
         SpawnHitEffect(hitPoint, awardedScore);
 
-        SoundManager.Instance.PlaySound(SoundManager.Instance.hitGold);
-
         onHit.Invoke();
     }
 
