@@ -45,7 +45,6 @@ public class CanvasScreenGameOver : CanvasScreen
            writing = true;
 
      }
-
 #if UNITY_EDITOR
        Invoke("CallNextScreen", gameOverDisplaytime_EDITOR);
 #else

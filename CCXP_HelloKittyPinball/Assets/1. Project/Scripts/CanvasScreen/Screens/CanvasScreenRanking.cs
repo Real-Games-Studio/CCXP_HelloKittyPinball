@@ -30,7 +30,6 @@ public class CanvasScreenRanking : CanvasScreen
         base.TurnOn();
 
         UpdateRankingDisplay();
-        
 #if UNITY_EDITOR
         Invoke("CallNextScreen", displayDuration_EDITOR);
 #else
