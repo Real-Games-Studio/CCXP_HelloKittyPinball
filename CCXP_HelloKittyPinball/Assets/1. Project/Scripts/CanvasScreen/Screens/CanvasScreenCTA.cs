@@ -40,6 +40,8 @@ public class CanvasScreenCTA : CanvasScreen
     public override void TurnOn()
     {
         base.TurnOn();
+        Debug.Log("CTA");
+
 
         if (stageRoutine != null)
         {

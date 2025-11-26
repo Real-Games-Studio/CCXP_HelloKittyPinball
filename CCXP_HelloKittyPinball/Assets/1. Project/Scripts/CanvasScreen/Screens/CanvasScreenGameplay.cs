@@ -13,7 +13,7 @@ public class CanvasScreenGameplay : CanvasScreen
     private int displayedScore;
     private float scoreTickTimer;
 
-
+    private bool _isGameOver;
 
     void Update()
     {
@@ -24,11 +24,20 @@ public class CanvasScreenGameplay : CanvasScreen
 
             if(gameManager.GameState == GameState.GameOver)
             {
-
-                Invoke("CallNextScreen", 1f);
+                if (!_isGameOver)
+                {
+                    _isGameOver = true;
+                    Invoke("CallNextScreen", 1f);
+                }
             }
 
         }
+    }
+
+    public override void TurnOn()
+    {
+        _isGameOver = false;
+        base.TurnOn();
     }
 
     private void Start()
