@@ -2087,6 +2087,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManager: {fileID: 1716321950}
+  DebugObjects:
+  - Position: {fileID: 1573363947}
+    Key: 117
+  - Position: {fileID: 619322410}
+    Key: 105
+  - Position: {fileID: 1097409189}
+    Key: 111
+  - Position: {fileID: 1372979467}
+    Key: 112
+  - Position: {fileID: 181968623}
+    Key: 108
+  - Position: {fileID: 1020899403}
+    Key: 107
+  - Position: {fileID: 450288608}
+    Key: 106
+  - Position: {fileID: 1937817638}
+    Key: 104
   PositionChoco: {fileID: 1573363947}
   ChocoKey: 117
   PositionHelloKitty: {fileID: 619322410}
