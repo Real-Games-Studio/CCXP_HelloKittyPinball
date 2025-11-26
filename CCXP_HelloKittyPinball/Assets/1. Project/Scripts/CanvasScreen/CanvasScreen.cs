@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 [RequireComponent(typeof(CanvasGroup))]
@@ -23,6 +24,7 @@ public class CanvasScreen: MonoBehaviour
     [Tooltip("Toda tela deve ter uma base de canvas group")]
     public CanvasGroup canvasgroup;
     [SerializeField]protected ScreenData data;
+    public AudioSource AudioSource;
     public virtual void OnValidate()
     {
         if (canvasgroup == null)
@@ -95,12 +97,20 @@ public class CanvasScreen: MonoBehaviour
     }
     public virtual void TurnOn()
     {
+        if (AudioSource != null)
+        {
+            AudioSource.Play();
+        }
         canvasgroup.alpha = 1;
         canvasgroup.interactable = true;
         canvasgroup.blocksRaycasts = true;
     }
     public virtual void TurnOff()
     {
+        if (AudioSource != null)
+        {
+            AudioSource.Stop();
+        }
         canvasgroup.alpha = 0;
         canvasgroup.interactable = false;
         canvasgroup.blocksRaycasts = false;

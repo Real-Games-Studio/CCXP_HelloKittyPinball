@@ -12,9 +12,14 @@ public class CanvasScreenGameOver : CanvasScreen
    [SerializeField] public List<string> finalMessages;
    [SerializeField] public TMP_Text finalScoreText;
 
+   public AudioSource EndAudioSource;
     private bool writing = false;
    override public void TurnOn()
    {
+        if (EndAudioSource != null)
+        {
+            EndAudioSource.Play();
+        }
        base.TurnOn();
 
      if(!writing)
