@@ -18,7 +18,10 @@ public class CanvasScreenGameOver : CanvasScreen
    {
         if (EndAudioSource != null)
         {
-            EndAudioSource.Play();
+            if (!EndAudioSource.isPlaying)
+            {
+                EndAudioSource.Play();
+            }
         }
        base.TurnOn();
 
