@@ -9365,6 +9365,22 @@ PrefabInstance:
       propertyPath: EmissionModule.enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2531637865413594350, guid: 28fae5d2d06cdcb4eb9a2b71db73af2e, type: 3}
+      propertyPath: RotationBySpeedModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531637865413594350, guid: 28fae5d2d06cdcb4eb9a2b71db73af2e, type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 2.6179938
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531637865413594350, guid: 28fae5d2d06cdcb4eb9a2b71db73af2e, type: 3}
+      propertyPath: RotationBySpeedModule.curve.scalar
+      value: 8.203048
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531637865413594350, guid: 28fae5d2d06cdcb4eb9a2b71db73af2e, type: 3}
+      propertyPath: InitialModule.randomizeRotationDirection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3339353103045310214, guid: 28fae5d2d06cdcb4eb9a2b71db73af2e, type: 3}
       propertyPath: m_AllowRoll
       value: 0
@@ -9383,11 +9399,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4939081904430629859, guid: 28fae5d2d06cdcb4eb9a2b71db73af2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.6227
+      value: 2.53
       objectReference: {fileID: 0}
     - target: {fileID: 4939081904430629859, guid: 28fae5d2d06cdcb4eb9a2b71db73af2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1915
+      value: 1.49
       objectReference: {fileID: 0}
     - target: {fileID: 4939081904430629859, guid: 28fae5d2d06cdcb4eb9a2b71db73af2e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32560,6 +32576,40 @@ MonoBehaviour:
   outputPosition: {fileID: 632394330}
   MinForce: {x: -100, y: -100, z: 0}
   MaxForce: {x: 100, y: -200, z: 0}
+  Profile: {fileID: 253478193}
+  BloomAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 4.81
+      inSlope: 5.9716444
+      outSlope: 5.9716444
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.020189332
+    - serializedVersion: 3
+      time: 0.07025945
+      value: 29.006819
+      inSlope: 0.13037443
+      outSlope: 0.13037443
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 2
+      value: 4.81
+      inSlope: -12.5388975
+      outSlope: -12.5388975
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &1891845567
 MonoBehaviour:
   m_ObjectHideFlags: 0

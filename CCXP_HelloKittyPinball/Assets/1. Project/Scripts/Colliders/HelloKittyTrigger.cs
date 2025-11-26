@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 namespace _1._Project.Scripts.Colliders
 {
@@ -13,12 +16,22 @@ namespace _1._Project.Scripts.Colliders
 		public Transform outputPosition;
 		public Vector3 MinForce;
 		public Vector3 MaxForce;
+		public Volume Profile;
+		public AnimationCurve BloomAnimationCurve;
 		
 		private void OnTriggerEnter2D(Collider2D other)
 		{
 			if (other.CompareTag("Player"))
 			{
 				StartCoroutine(WaitToRelease(other.gameObject));
+			}
+			
+			Bloom b;
+			Profile.profile.TryGet<Bloom>(out b);
+
+			if (b != null)
+			{
+				StartCoroutine(AlterBloom(b));
 			}
 		}
 		
@@ -38,5 +51,18 @@ namespace _1._Project.Scripts.Colliders
 				z:UnityEngine.Random.Range(MinForce.z, MaxForce.z));
 			ball.GetComponent<Rigidbody2D>().AddRelativeForce(ballForce);
 		}
+
+		private IEnumerator AlterBloom(Bloom b)
+		{
+			float timecounter = 0.0f;
+			while (timecounter < 2.0f)
+			{
+				b.intensity.value = BloomAnimationCurve.Evaluate(timecounter);
+				timecounter += Time.deltaTime;
+				yield return new WaitForEndOfFrame();
+				
+			}
+        }
+
 	}
 }
