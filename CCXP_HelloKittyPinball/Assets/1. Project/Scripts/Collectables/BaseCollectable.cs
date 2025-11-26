@@ -1,10 +1,11 @@
 ﻿using System;
+using _1._Project.Scripts.Colliders;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace _1._Project.Scripts.Collectables
 {
-	public class BaseCollectable : MonoBehaviour, ICollectable
+	public class BaseCollectable : TriggerBaseClass, ICollectable
 	{
 		public UnityEvent<int> onCollectedEvent;
 		public int RowId;
@@ -20,6 +21,7 @@ namespace _1._Project.Scripts.Collectables
 			if (other.CompareTag("Player"))
 			{
 				OnCollected();
+				PlaySoundWithClip(EnterClip);
 			}
 		}
 	}

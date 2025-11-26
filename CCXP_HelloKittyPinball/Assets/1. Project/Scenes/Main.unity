@@ -6288,6 +6288,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7696659573228591375, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
+    - target: {fileID: 7696659573228591375, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -7387,6 +7391,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5883349710000206072, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
+    - target: {fileID: 5883349710000206072, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -7677,6 +7685,10 @@ PrefabInstance:
       propertyPath: RowId
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5883349710000206072, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
     - target: {fileID: 5883349710000206072, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -8109,6 +8121,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5883349710000206072, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
+    - target: {fileID: 5883349710000206072, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -8218,6 +8234,10 @@ PrefabInstance:
       propertyPath: RowId
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5883349710000206072, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
     - target: {fileID: 5883349710000206072, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -8881,6 +8901,10 @@ PrefabInstance:
       propertyPath: RowId
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7696659573228591375, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
     - target: {fileID: 7696659573228591375, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -13084,6 +13108,10 @@ PrefabInstance:
       propertyPath: RowId
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1532247890261696707, guid: f7a067cc9150c9d429f754a2a4a19dc7, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
     - target: {fileID: 1532247890261696707, guid: f7a067cc9150c9d429f754a2a4a19dc7, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -21662,6 +21690,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8915074266421035044, guid: 0fd28a27f1b3a334a81a22288a23d64a, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
+    - target: {fileID: 8915074266421035044, guid: 0fd28a27f1b3a334a81a22288a23d64a, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -27834,6 +27866,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5883349710000206072, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
+    - target: {fileID: 5883349710000206072, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -30034,6 +30070,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5304502955697442838, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
+    - target: {fileID: 5304502955697442838, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -31863,6 +31903,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7696659573228591375, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
+    - target: {fileID: 7696659573228591375, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -32361,6 +32405,10 @@ PrefabInstance:
       propertyPath: RowId
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8255254778478864159, guid: f584df6d106d8474ca763335e88c2062, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
     - target: {fileID: 8255254778478864159, guid: f584df6d106d8474ca763335e88c2062, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -36109,6 +36157,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5304502955697442838, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
+    - target: {fileID: 5304502955697442838, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -36794,6 +36846,10 @@ PrefabInstance:
       propertyPath: RowId
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5883349710000206072, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
     - target: {fileID: 5883349710000206072, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -37816,6 +37872,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8915074266421035044, guid: 0fd28a27f1b3a334a81a22288a23d64a, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
+    - target: {fileID: 8915074266421035044, guid: 0fd28a27f1b3a334a81a22288a23d64a, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -37925,6 +37985,10 @@ PrefabInstance:
       propertyPath: RowId
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5883349710000206072, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
     - target: {fileID: 5883349710000206072, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -38036,6 +38100,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7775257233813141635, guid: 7a4305e85c7a30f4a94b313c34d46682, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 450f62f2c6521214ab0d4aeebb5bd641, type: 3}
+    - target: {fileID: 7775257233813141635, guid: 7a4305e85c7a30f4a94b313c34d46682, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -38145,6 +38213,10 @@ PrefabInstance:
       propertyPath: RowId
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7696659573228591375, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
     - target: {fileID: 7696659573228591375, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -38256,6 +38328,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5304502955697442838, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
+    - target: {fileID: 5304502955697442838, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -38366,6 +38442,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6899325707896496809, guid: c2064d1acde36cf4b9384b741892a555, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
+    - target: {fileID: 6899325707896496809, guid: c2064d1acde36cf4b9384b741892a555, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -38411,6 +38491,10 @@ PrefabInstance:
       propertyPath: RowId
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1532247890261696707, guid: f7a067cc9150c9d429f754a2a4a19dc7, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
     - target: {fileID: 1532247890261696707, guid: f7a067cc9150c9d429f754a2a4a19dc7, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -38586,6 +38670,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8255254778478864159, guid: f584df6d106d8474ca763335e88c2062, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
+    - target: {fileID: 8255254778478864159, guid: f584df6d106d8474ca763335e88c2062, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -38631,6 +38719,10 @@ PrefabInstance:
       propertyPath: RowId
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2133839664106114157, guid: 732e5e5c26ed1d94f9eb70013f83da90, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
     - target: {fileID: 2133839664106114157, guid: 732e5e5c26ed1d94f9eb70013f83da90, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -38813,6 +38905,10 @@ PrefabInstance:
       propertyPath: RowId
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3050493675383228223, guid: da52fbdbf23f876479426a473bae7af8, type: 3}
+      propertyPath: EnterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b1ed8c9e81232c545abf7790b0f31b73, type: 3}
     - target: {fileID: 3050493675383228223, guid: da52fbdbf23f876479426a473bae7af8, type: 3}
       propertyPath: onCollectedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
