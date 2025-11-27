@@ -22,6 +22,7 @@ public class CounterAnimator : MonoBehaviour
             yield return new WaitForEndOfFrame();
             timer += Time.deltaTime;
         }
+        texto.text = targetCount.ToString();
     }
 
 }
