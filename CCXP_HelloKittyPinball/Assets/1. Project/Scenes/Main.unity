@@ -7831,6 +7831,7 @@ MonoBehaviour:
   thirdPlaceText: {fileID: 204551236}
   matchPositionText: {fileID: 289023978}
   matchScoreText: {fileID: 1476551966}
+  counterAnimator: {fileID: 1476551968}
   displayDaylyRanking: 0
   arrows: {fileID: 1319023355}
   arrowsPos1: {fileID: 154738050}
@@ -24450,6 +24451,7 @@ GameObject:
   - component: {fileID: 1476551965}
   - component: {fileID: 1476551967}
   - component: {fileID: 1476551966}
+  - component: {fileID: 1476551968}
   m_Layer: 5
   m_Name: Text MathScore
   m_TagString: Untagged
@@ -24575,6 +24577,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476551964}
   m_CullTransparentMesh: 1
+--- !u!114 &1476551968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476551964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a54635cac9e9ad46b819a0704137b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texto: {fileID: 1476551966}
+  CountTime: 2
 --- !u!1 &1485718182
 GameObject:
   m_ObjectHideFlags: 0
