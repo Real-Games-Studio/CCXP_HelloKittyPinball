@@ -284,8 +284,21 @@ public class GameManager : MonoBehaviour
 
         if (!gameOver && listBall.Count < MaxAmountOfBallsConcurrently)
         {
-            CreateBall();
+            if (!_isWaitingForBall)
+            {
+                StartCoroutine(WaitToReleaseBall());
+            }
         }
+    }
+
+    public int WaitTimeForBall = 1;
+    private bool _isWaitingForBall = false;
+    private IEnumerator WaitToReleaseBall()
+    {
+        _isWaitingForBall = true;
+        yield return new WaitForSecondsRealtime(WaitTimeForBall);
+        CreateBall();
+        _isWaitingForBall = false;
     }
 
     /// <summary>

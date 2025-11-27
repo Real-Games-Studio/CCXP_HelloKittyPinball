@@ -7,7 +7,12 @@ namespace _1._Project.Scripts.Colliders
 	{
 		private void OnTriggerEnter2D(Collider2D other)
 		{
-			
+
+			if (other.CompareTag("Player"))
+			{
+				Debug.Log(other.name);
+				PlaySoundWithClip(EnterClip);
+			}
 		}
 	}
 }
