@@ -7866,9 +7866,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485967132}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &490133487
 GameObject:
@@ -17894,7 +17894,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sintonia perfeita.  \\n Voc\xEAs arrasaram! "
+  m_text: "Que dupla incr\xEDvel! Amizade em a\xE7\xE3o."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d59aeb5088d8b4eb6f83afe346912d, type: 2}
   m_sharedMaterial: {fileID: -345708099315028105, guid: f2d59aeb5088d8b4eb6f83afe346912d, type: 2}
@@ -17921,7 +17921,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.9
+  m_fontSize: 33.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -24446,6 +24446,8 @@ MonoBehaviour:
   - "Que dupla incr\xEDvel! Amizade em a\xE7\xE3o."
   - "Dupla unida, vit\xF3ria garantida!"
   finalScoreText: {fileID: 1855981490}
+  finalScoreAnimator: {fileID: 1855981492}
+  finalScoreTimer: 2
   EndAudioSource: {fileID: 589488257}
 --- !u!225 &1466807506
 CanvasGroup:
@@ -24455,9 +24457,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466807503}
   m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!1 &1476551964
 GameObject:
@@ -31844,6 +31846,7 @@ GameObject:
   - component: {fileID: 1855981489}
   - component: {fileID: 1855981491}
   - component: {fileID: 1855981490}
+  - component: {fileID: 1855981492}
   m_Layer: 5
   m_Name: Text SCORE
   m_TagString: Untagged
@@ -31890,7 +31893,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 25138
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d59aeb5088d8b4eb6f83afe346912d, type: 2}
   m_sharedMaterial: {fileID: -345708099315028105, guid: f2d59aeb5088d8b4eb6f83afe346912d, type: 2}
@@ -31969,6 +31972,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855981488}
   m_CullTransparentMesh: 1
+--- !u!114 &1855981492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855981488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a54635cac9e9ad46b819a0704137b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texto: {fileID: 1855981490}
 --- !u!1 &1860608261
 GameObject:
   m_ObjectHideFlags: 0

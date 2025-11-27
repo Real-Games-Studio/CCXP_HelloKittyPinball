@@ -15,7 +15,8 @@ public class CanvasScreenGameOver : CanvasScreen
    [SerializeField] public TMP_Text finalMessageText; // deve sortear uma das mensagens finais
    [SerializeField] public List<string> finalMessages;
    [SerializeField] public TMP_Text finalScoreText;
-
+   public CounterAnimator finalScoreAnimator;
+   public int finalScoreTimer = 2;
    public AudioSource EndAudioSource;
     private bool writing = false;
 
@@ -45,7 +46,8 @@ public class CanvasScreenGameOver : CanvasScreen
             finalMessageText.SetText(finalMessages[randomIndex]);
         }
 
-        finalScoreText.SetText(ScoreManager.Instance.Score.ToString());
+        finalScoreAnimator.StartCount(ScoreManager.Instance.Score, finalScoreTimer);
+        //finalScoreText.SetText(ScoreManager.Instance.Score.ToString());
 
 
        // aqui podemos colocar uma chamada para salvar o score do jogador
