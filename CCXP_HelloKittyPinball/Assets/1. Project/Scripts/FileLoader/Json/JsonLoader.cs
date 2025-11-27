@@ -5,13 +5,22 @@ namespace RealGames
 {
     public static class JsonLoader
     {
+        public static AppConfig appConfig = null;
         public static AppConfig LoadGameSettings(string jsonFilePath)
         {
             if (File.Exists(jsonFilePath))
             {
-                string json = File.ReadAllText(jsonFilePath);
-                AppConfig settings = JsonUtility.FromJson<AppConfig>(json);
-                return settings;
+                if (appConfig == null)
+                {
+                    string json = File.ReadAllText(jsonFilePath);
+                    AppConfig settings = JsonUtility.FromJson<AppConfig>(json);
+                    appConfig = settings;
+                    return settings;
+                }
+                else
+                {
+                    return appConfig;
+                }
             }
             else
             {

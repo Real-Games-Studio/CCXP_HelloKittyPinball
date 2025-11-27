@@ -34,7 +34,7 @@ public class DebugHelper : MonoBehaviour
 			}
 			
 			GameManager.listBall[0].transform.position = position.position;
-			GameManager.listBall[0].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+			GameManager.listBall[0].GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
 			GameManager.listBall[0].transform.localEulerAngles = Vector3.zero;
 		}
 	}
