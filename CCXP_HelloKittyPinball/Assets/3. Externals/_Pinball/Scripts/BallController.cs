@@ -2,9 +2,12 @@
 using System.Collections;
 using SgLib;
 
+[RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class BallController : MonoBehaviour
 {
+    public AudioClip AudioClip;
+    private AudioSource _audioSource;
     private Rigidbody2D _rigidbody2D;
     private GameManager gameManager;
     private SpriteRenderer spriteRenderer;
@@ -26,6 +29,11 @@ public class BallController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
+        if (AudioClip != null)
+        {
+            _audioSource.clip = AudioClip;
+        }
         _rigidbody2D = GetComponent<Rigidbody2D>();
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         gameObject.SetActive(false);
@@ -44,6 +52,10 @@ public class BallController : MonoBehaviour
         var BallLaunchForce = Random.Range(MinBallLaunchForce, MaxBallLaunchForce);
         _rigidbody2D.AddForce(Vector2.up*BallLaunchForce, ForceMode2D.Impulse);
         idleTimer = 0f;
+        if (AudioClip != null)
+        {
+            _audioSource.Play();
+        }
     }
 
     void FixedUpdate()

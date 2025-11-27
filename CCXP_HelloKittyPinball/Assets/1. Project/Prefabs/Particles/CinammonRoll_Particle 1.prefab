@@ -449,7 +449,7 @@ ParticleSystem:
     startRotationX:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 3.1415925
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -502,7 +502,7 @@ ParticleSystem:
     startRotationY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: -2.5755825
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -609,8 +609,8 @@ ParticleSystem:
     gravitySource: 0
     maxNumParticles: 1000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
-    size3D: 0
-    rotation3D: 0
+    size3D: 1
+    rotation3D: 1
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
@@ -4861,7 +4861,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -27095979
   m_SortingLayer: 5
-  m_SortingOrder: 0
+  m_SortingOrder: 34
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
