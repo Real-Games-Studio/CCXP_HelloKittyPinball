@@ -1,7 +1,11 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
+using RealGames;
 using SgLib;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CanvasScreenGameOver : CanvasScreen
 {
@@ -14,7 +18,15 @@ public class CanvasScreenGameOver : CanvasScreen
 
    public AudioSource EndAudioSource;
     private bool writing = false;
-   override public void TurnOn()
+
+    private void Start()
+    {
+        
+        gameOverDisplaytime = JsonLoader.LoadGameSettings(Path.Combine(Application.streamingAssetsPath, "appconfig.json"))
+            .TempoGameOver;
+    }
+
+    override public void TurnOn()
    {
         if (EndAudioSource != null)
         {
@@ -28,12 +40,12 @@ public class CanvasScreenGameOver : CanvasScreen
      if(!writing)
      {
         if(finalMessages.Count > 0)
-       {
-           int randomIndex = Random.Range(0, finalMessages.Count);
-           finalMessageText.SetText(finalMessages[randomIndex]);
-       }
+        {
+            int randomIndex = Random.Range(0, finalMessages.Count);
+            finalMessageText.SetText(finalMessages[randomIndex]);
+        }
 
-       finalScoreText.SetText(ScoreManager.Instance.Score.ToString());
+        finalScoreText.SetText(ScoreManager.Instance.Score.ToString());
 
 
        // aqui podemos colocar uma chamada para salvar o score do jogador

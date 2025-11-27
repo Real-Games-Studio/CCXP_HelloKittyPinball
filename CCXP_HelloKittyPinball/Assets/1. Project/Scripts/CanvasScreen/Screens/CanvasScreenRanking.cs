@@ -54,6 +54,8 @@ public class CanvasScreenRanking : CanvasScreen
 
     private void Start()
     {
+        displayDuration = JsonLoader.LoadGameSettings(Path.Combine(Application.streamingAssetsPath, "appconfig.json"))
+            .TempoRanking;
         GetDailyFromJson();
     }
 
@@ -86,9 +88,19 @@ public class CanvasScreenRanking : CanvasScreen
 
         if (lastScore.HasValue)
         {
-            SetMatchScore(lastScore.Value.score);
             int? position = ScoreManager.Instance.GetLastRecordedScorePosition(displayDaylyRanking);
             SetMatchPosition(position);
+            SetMatchScore(lastScore.Value.score);
+            if (position>=3)
+            {
+                
+                if (matchScoreText == null)
+                {
+                    return;
+                }
+
+                matchScoreText.SetText("");
+            }
         }
         else
         {
@@ -98,6 +110,17 @@ public class CanvasScreenRanking : CanvasScreen
             int position = displayDaylyRanking
                 ? ScoreManager.Instance.GetPositionInRankingOnCurrentDay(currentScore)
                 : ScoreManager.Instance.GetPositionInRanking(currentScore);
+            
+            if (position>=3)
+            {
+                
+                if (matchScoreText == null)
+                {
+                    return;
+                }
+
+                matchScoreText.SetText("");
+            }
 
             SetMatchPosition(position > 0 ? position : (int?)null);
         }
@@ -142,18 +165,21 @@ public class CanvasScreenRanking : CanvasScreen
         {
             case 1:
                 arrows.transform.localPosition = arrowsPos1.transform.localPosition;
+                matchPositionText.SetText("");
                 break;
             case 2:
                 arrows.transform.localPosition = arrowsPos2.transform.localPosition;
+                matchPositionText.SetText("");
                 break;
             case 3:
                 arrows.transform.localPosition =  arrowsPos3.transform.localPosition;
+                matchPositionText.SetText("");
                 break;
             default:
                 arrows.transform.localPosition = arrowsPosDefault.transform.localPosition;
+                matchPositionText.SetText(position.HasValue && position.Value > 0 ? $"{position.Value}" : "");
                 break;
         }
-        matchPositionText.SetText(position.HasValue && position.Value > 0 ? $"{position.Value}" : "");
     }
 
     private void ClearRankingTexts()

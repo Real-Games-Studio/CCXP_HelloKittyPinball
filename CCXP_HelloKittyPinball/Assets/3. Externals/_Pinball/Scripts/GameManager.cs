@@ -3,8 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 using SgLib;
 using System.Collections.Generic;
-using System;
-using _1._Project.Scripts;
+using System.IO;
+using RealGames;
 using UnityRawInput;
 
 public enum GameState
@@ -116,6 +116,9 @@ public class GameManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        targetAliveTime = JsonLoader.LoadGameSettings(Path.Combine(Application.streamingAssetsPath, "appconfig.json"))
+            .TempoDeJogo;
+        initialGameDuration = targetAliveTime;
         RawInput.WorkInBackground = true;
         RawInput.InterceptMessages = false;
         RawInput.OnKeyDown -= RawInputOnOnKeyDownHandler;
@@ -123,6 +126,7 @@ public class GameManager : MonoBehaviour
         RawInput.Stop();
     }
 
+    
     private void RawInputOnOnKeyDownHandler(RawKey obj)
     {
         if (obj == leftFlipperRawKey)
@@ -151,6 +155,9 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        targetAliveTime = JsonLoader.LoadGameSettings(Path.Combine(Application.streamingAssetsPath, "appconfig.json"))
+            .TempoDeJogo;
+        initialGameDuration = targetAliveTime;
         GameState = GameState.Prepare;
 
         ScoreManager.Instance.Reset();
