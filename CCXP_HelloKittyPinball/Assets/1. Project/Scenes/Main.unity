@@ -6309,7 +6309,7 @@ PrefabInstance:
     - target: {fileID: 2684891844132245454, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2684891844132245454, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -7384,7 +7384,7 @@ PrefabInstance:
     - target: {fileID: 2177343710449854009, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2177343710449854009, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -7679,7 +7679,7 @@ PrefabInstance:
     - target: {fileID: 2177343710449854009, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2177343710449854009, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -7847,9 +7847,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485967132}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &490133487
 GameObject:
@@ -8115,7 +8115,7 @@ PrefabInstance:
     - target: {fileID: 2177343710449854009, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2177343710449854009, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -8229,7 +8229,7 @@ PrefabInstance:
     - target: {fileID: 2177343710449854009, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2177343710449854009, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -8928,7 +8928,7 @@ PrefabInstance:
     - target: {fileID: 2684891844132245454, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2684891844132245454, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -13199,7 +13199,7 @@ PrefabInstance:
     - target: {fileID: 6544014640573920770, guid: f7a067cc9150c9d429f754a2a4a19dc7, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6544014640573920770, guid: f7a067cc9150c9d429f754a2a4a19dc7, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -13820,7 +13820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d749a7710084740b549f5a94519d6be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioClip: {fileID: 8300000, guid: 9c82044a5587e0c44a7db58b9842b0df, type: 3}
+  AudioClip: {fileID: 8300000, guid: 05b0303f666d89543b68fd88ac3689e6, type: 3}
 --- !u!82 &1036823474
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14730,7 +14730,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.1, y: -35.1}
+  m_AnchoredPosition: {x: -44, y: -54}
   m_SizeDelta: {x: 494.1913, y: 61.837}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1090289007
@@ -15731,7 +15731,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123550290}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -17820,7 +17820,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.8445, y: 30.919}
+  m_AnchoredPosition: {x: 2.8445, y: 14}
   m_SizeDelta: {x: 447.9218, y: 61.837}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1191636711
@@ -17843,7 +17843,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sintonia perfeita. Voc\xEAs arrasaram! "
+  m_text: "Sintonia perfeita.  \\n Voc\xEAs arrasaram! "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d59aeb5088d8b4eb6f83afe346912d, type: 2}
   m_sharedMaterial: {fileID: -345708099315028105, guid: f2d59aeb5088d8b4eb6f83afe346912d, type: 2}
@@ -17870,7 +17870,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.75
+  m_fontSize: 30.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -21837,7 +21837,7 @@ PrefabInstance:
     - target: {fileID: 3758840194808043237, guid: 0fd28a27f1b3a334a81a22288a23d64a, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3758840194808043237, guid: 0fd28a27f1b3a334a81a22288a23d64a, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -24383,7 +24383,7 @@ MonoBehaviour:
     editor_turnOn: 0
     editor_turnOff: 0
   AudioSource: {fileID: 0}
-  gameOverDisplaytime: 60
+  gameOverDisplaytime: 15
   gameOverDisplaytime_EDITOR: 10
   gameManager: {fileID: 1716321950}
   finalMessageText: {fileID: 1191636711}
@@ -24404,9 +24404,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466807503}
   m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!1 &1476551964
 GameObject:
@@ -28109,7 +28109,7 @@ PrefabInstance:
     - target: {fileID: 2177343710449854009, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2177343710449854009, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -30021,7 +30021,7 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   torqueForce: 10000
   scoreToIncreaseDifficulty: 10
-  targetAliveTime: 60
+  targetAliveTime: 1
   targetAliveTimeDecreaseValue: 2
   minTargetAliveTime: 3
   scoreToAddedBall: 100
@@ -30306,7 +30306,7 @@ PrefabInstance:
     - target: {fileID: 436779513157109463, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 436779513157109463, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -31794,7 +31794,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d59aeb5088d8b4eb6f83afe346912d, type: 2}
   m_sharedMaterial: {fileID: -345708099315028105, guid: f2d59aeb5088d8b4eb6f83afe346912d, type: 2}
@@ -32183,7 +32183,7 @@ PrefabInstance:
     - target: {fileID: 2684891844132245454, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2684891844132245454, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -32694,7 +32694,7 @@ PrefabInstance:
     - target: {fileID: 4396128455065530846, guid: f584df6d106d8474ca763335e88c2062, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 4396128455065530846, guid: f584df6d106d8474ca763335e88c2062, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -32914,7 +32914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63cafb196a84aea9e54dbd3925b075d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnterClip: {fileID: 8300000, guid: 05b0303f666d89543b68fd88ac3689e6, type: 3}
+  EnterClip: {fileID: 8300000, guid: 9c82044a5587e0c44a7db58b9842b0df, type: 3}
   ExitClip: {fileID: 0}
   GameManager: {fileID: 1716321950}
   HelloKittyOutPosition: {fileID: 676892416}
@@ -36397,7 +36397,7 @@ PrefabInstance:
     - target: {fileID: 436779513157109463, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 436779513157109463, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -37095,7 +37095,7 @@ PrefabInstance:
     - target: {fileID: 2177343710449854009, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2177343710449854009, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -38203,7 +38203,7 @@ PrefabInstance:
     - target: {fileID: 3758840194808043237, guid: 0fd28a27f1b3a334a81a22288a23d64a, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3758840194808043237, guid: 0fd28a27f1b3a334a81a22288a23d64a, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -38277,7 +38277,7 @@ PrefabInstance:
     - target: {fileID: 2177343710449854009, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2177343710449854009, guid: db9a9af011f30854c9a8f16ac3e3a3c8, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -38423,7 +38423,7 @@ PrefabInstance:
     - target: {fileID: 2627255203384602178, guid: 7a4305e85c7a30f4a94b313c34d46682, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2627255203384602178, guid: 7a4305e85c7a30f4a94b313c34d46682, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -38537,7 +38537,7 @@ PrefabInstance:
     - target: {fileID: 2684891844132245454, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2684891844132245454, guid: d4524b7ba95036745a0935e1f2c93245, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -38611,7 +38611,7 @@ PrefabInstance:
     - target: {fileID: 436779513157109463, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 436779513157109463, guid: 24b202d7bf309644c89dda11852fb3df, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -38733,7 +38733,7 @@ PrefabInstance:
     - target: {fileID: 1165858216791962728, guid: c2064d1acde36cf4b9384b741892a555, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 1165858216791962728, guid: c2064d1acde36cf4b9384b741892a555, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -38879,7 +38879,7 @@ PrefabInstance:
     - target: {fileID: 6544014640573920770, guid: f7a067cc9150c9d429f754a2a4a19dc7, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6544014640573920770, guid: f7a067cc9150c9d429f754a2a4a19dc7, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -39001,7 +39001,7 @@ PrefabInstance:
     - target: {fileID: 4396128455065530846, guid: f584df6d106d8474ca763335e88c2062, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 4396128455065530846, guid: f584df6d106d8474ca763335e88c2062, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -39103,7 +39103,7 @@ PrefabInstance:
     - target: {fileID: 5912744914362423980, guid: 732e5e5c26ed1d94f9eb70013f83da90, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 5912744914362423980, guid: 732e5e5c26ed1d94f9eb70013f83da90, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30
@@ -39325,7 +39325,7 @@ PrefabInstance:
     - target: {fileID: 7333872470236451326, guid: da52fbdbf23f876479426a473bae7af8, type: 3}
       propertyPath: hitEffectPrefab
       value: 
-      objectReference: {fileID: 8567730566259394190, guid: 7a25af73f8a9e234eb1bc316f98cac55, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 7333872470236451326, guid: da52fbdbf23f876479426a473bae7af8, type: 3}
       propertyPath: timeIfHitMultiplieScore
       value: 30

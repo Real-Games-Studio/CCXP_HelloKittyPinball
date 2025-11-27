@@ -92,7 +92,7 @@ public class CanvasScreenRanking : CanvasScreen
             int? position = ScoreManager.Instance.GetLastRecordedScorePosition(displayDaylyRanking);
             SetMatchPosition(position);
             SetMatchScore(lastScore.Value.score);
-            if (position>=3)
+            if (position<=3)
             {
                 
                 if (matchScoreText == null)
@@ -112,7 +112,7 @@ public class CanvasScreenRanking : CanvasScreen
                 ? ScoreManager.Instance.GetPositionInRankingOnCurrentDay(currentScore)
                 : ScoreManager.Instance.GetPositionInRanking(currentScore);
             
-            if (position>=3)
+            if (position<=3)
             {
                 
                 if (matchScoreText == null)
