@@ -12,11 +12,12 @@ public class CanvasScreenRanking : CanvasScreen
     [SerializeField] private float displayDuration = 5f; // no final deve chamar outra tela
     [SerializeField] private float displayDuration_EDITOR = 10f; // no final deve chamar outra tela
     [SerializeField] private TMP_Text firstPlaceText;
-    [SerializeField] private TMP_Text secondPlaceText;      
+    [SerializeField] private TMP_Text secondPlaceText;
     [SerializeField] private TMP_Text thirdPlaceText;
 
     [SerializeField] private TMP_Text matchPositionText;
     [SerializeField] private TMP_Text matchScoreText;
+    [SerializeField] private CounterAnimator counterAnimator;
     [SerializeField] private bool displayDaylyRanking = false;
     [SerializeField] private GameObject arrows;
     [SerializeField] private GameObject arrowsPos1;
@@ -151,7 +152,8 @@ public class CanvasScreenRanking : CanvasScreen
             return;
         }
 
-        matchScoreText.SetText(score.Value.ToString());
+        //matchScoreText.SetText(score.Value.ToString());
+        counterAnimator.StartCount(score.Value);
     }
 
     private void SetMatchPosition(int? position)
