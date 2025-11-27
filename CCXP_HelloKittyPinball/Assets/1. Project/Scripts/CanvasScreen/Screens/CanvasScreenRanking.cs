@@ -6,6 +6,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using UnityEngine.Serialization;
+
 public class CanvasScreenRanking : CanvasScreen
 {
 
@@ -17,7 +19,10 @@ public class CanvasScreenRanking : CanvasScreen
 
     [SerializeField] private TMP_Text matchPositionText;
     [SerializeField] private TMP_Text matchScoreText;
-    [SerializeField] private CounterAnimator counterAnimator;
+    [FormerlySerializedAs("counterAnimator")] [SerializeField] private CounterAnimator PlayerCounterAnimator;
+    [SerializeField] private CounterAnimator FirstPlayerCounterAnimator;
+    [SerializeField] private CounterAnimator SecondPlayerCounterAnimator;
+    [SerializeField] private CounterAnimator ThirdPlayerCounterAnimator;
     [SerializeField] private bool displayDaylyRanking = false;
     [SerializeField] private GameObject arrows;
     [SerializeField] private GameObject arrowsPos1;
@@ -25,6 +30,8 @@ public class CanvasScreenRanking : CanvasScreen
     [SerializeField] private GameObject arrowsPos3;
     [SerializeField] private GameObject arrowsPosDefault;
 
+    public int TimerPlayer = 2;
+    public int TimerOld = 0;
     public AudioSource EndAudioSource;
     public override void TurnOn()
     {
@@ -91,22 +98,35 @@ public class CanvasScreenRanking : CanvasScreen
         {
             int? position = ScoreManager.Instance.GetLastRecordedScorePosition(displayDaylyRanking);
             SetMatchPosition(position);
-            SetMatchScore(lastScore.Value.score);
             if (position<=3)
             {
-                
                 if (matchScoreText == null)
                 {
                     return;
                 }
 
-                matchScoreText.SetText("");
+                SetMatchScore(-1, TimerOld);
+                switch (position)
+                {
+                    case 1:
+                        SetCoreFirst(lastScore.Value.score, TimerPlayer);
+                        break;
+                    case 2:
+                        SetCoreSecond(lastScore.Value.score, TimerPlayer);
+                        break;
+                    case 3:
+                        SetCoreThird(lastScore.Value.score, TimerPlayer);
+                        break;
+                }
+            }
+            else
+            {
+                SetMatchScore(lastScore.Value.score, TimerPlayer);
             }
         }
         else
         {
             int currentScore = ScoreManager.Instance.Score;
-            SetMatchScore(currentScore);
 
             int position = displayDaylyRanking
                 ? ScoreManager.Instance.GetPositionInRankingOnCurrentDay(currentScore)
@@ -120,7 +140,23 @@ public class CanvasScreenRanking : CanvasScreen
                     return;
                 }
 
-                matchScoreText.SetText("");
+                SetMatchScore(-1, TimerOld);
+                switch (position)
+                {
+                    case 1:
+                        SetCoreFirst(lastScore.Value.score, TimerPlayer);
+                        break;
+                    case 2:
+                        SetCoreSecond(lastScore.Value.score, TimerPlayer);
+                        break;
+                    case 3:
+                        SetCoreThird(lastScore.Value.score, TimerPlayer);
+                        break;
+                }
+            }
+            else
+            {
+                SetMatchScore(lastScore.Value.score, TimerPlayer);
             }
 
             SetMatchPosition(position > 0 ? position : (int?)null);
@@ -145,15 +181,41 @@ public class CanvasScreenRanking : CanvasScreen
         }
     }
 
-    private void SetMatchScore(int? score)
+    private void SetCoreFirst(int? score, int timer)
     {
         if (matchScoreText == null)
         {
             return;
         }
 
-        //matchScoreText.SetText(score.Value.ToString());
-        counterAnimator.StartCount(score.Value);
+        FirstPlayerCounterAnimator.StartCount(score.Value, timer);
+    }
+    private void SetCoreSecond(int? score, int timer)
+    {
+        if (matchScoreText == null)
+        {
+            return;
+        }
+
+        SecondPlayerCounterAnimator.StartCount(score.Value, timer);
+    }
+    private void SetCoreThird(int? score, int timer)
+    {
+        if (matchScoreText == null)
+        {
+            return;
+        }
+
+        ThirdPlayerCounterAnimator.StartCount(score.Value, timer);
+    }
+    private void SetMatchScore(int? score, int timer)
+    {
+        if (matchScoreText == null)
+        {
+            return;
+        }
+
+        PlayerCounterAnimator.StartCount(score.Value, timer);
     }
 
     private void SetMatchPosition(int? position)
@@ -167,14 +229,17 @@ public class CanvasScreenRanking : CanvasScreen
         {
             case 1:
                 arrows.transform.localPosition = arrowsPos1.transform.localPosition;
+                SetMatchScore(-1,TimerOld);
                 matchPositionText.SetText("");
                 break;
             case 2:
                 arrows.transform.localPosition = arrowsPos2.transform.localPosition;
+                SetMatchScore(-1,TimerOld);
                 matchPositionText.SetText("");
                 break;
             case 3:
                 arrows.transform.localPosition =  arrowsPos3.transform.localPosition;
+                SetMatchScore(-1,TimerOld);
                 matchPositionText.SetText("");
                 break;
             default:
@@ -189,7 +254,7 @@ public class CanvasScreenRanking : CanvasScreen
         AssignPlaceText(firstPlaceText, null, 0);
         AssignPlaceText(secondPlaceText, null, 0);
         AssignPlaceText(thirdPlaceText, null, 0);
-        SetMatchScore(null);
+        SetMatchScore(null,0);
         SetMatchPosition(null);
     }
 }

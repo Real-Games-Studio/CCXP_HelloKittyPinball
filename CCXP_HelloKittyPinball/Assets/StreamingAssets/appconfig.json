@@ -1,7 +1,7 @@
 {
   "applicationName": "Hello Kitty",
   "maxInactiveTime": 300,
-  "RankingDiario" : 0,
+  "RankingDiario" : 1,
   "TempoDeJogo" : 60,
   "TempoGameOver" : 15,
   "TempoRanking" : 25

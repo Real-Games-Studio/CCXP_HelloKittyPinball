@@ -5,24 +5,32 @@ using UnityEngine;
 public class CounterAnimator : MonoBehaviour
 {
     public TMP_Text texto;
-    public float CountTime = 2.0f;
 
-    public void StartCount(int targetcount)
+    public void StartCount(int targetcount, int timer)
     {
-        StartCoroutine(CountRoutine(targetcount));
+        StartCoroutine(CountRoutine(targetcount,timer));
     }
-    IEnumerator CountRoutine(int targetCount)
+    IEnumerator CountRoutine(int targetCount, int timers)
     {
-        int currentCount = 0;
-        float timer = 0.0f;
-        while (timer<=CountTime)
+        if (targetCount ==-1)
         {
-            currentCount = (int) (Mathf.Min(1.0f, timer / CountTime) * targetCount);
-            texto.text = currentCount.ToString();
+            texto.text = "";
             yield return new WaitForEndOfFrame();
-            timer += Time.deltaTime;
+            yield break;
         }
-        texto.text = targetCount.ToString();
+        else
+        {
+            int currentCount = 0;
+            float timer = 0.0f;
+            while (timer<=timers)
+            {
+                currentCount = (int) (Mathf.Min(1.0f, timer / timers) * targetCount);
+                texto.text = currentCount.ToString();
+                yield return new WaitForEndOfFrame();
+                timer += Time.deltaTime;
+            }
+            texto.text = targetCount.ToString();
+        }
     }
 
 }
