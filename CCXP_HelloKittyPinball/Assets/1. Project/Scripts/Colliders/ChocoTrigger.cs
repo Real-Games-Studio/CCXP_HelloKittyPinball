@@ -56,21 +56,25 @@ namespace _1._Project.Scripts.Colliders
 			ball.SetActive(false);
 			StartPulseEffect();
 			yield return new WaitForSeconds(1f);
-			var r = Random.Range(0, 2);
-			var ChocoOutPosition = r == 0 ? ChocoOutPosition1 : ChocoOutPosition2;
-			ball.transform.position = ChocoOutPosition.transform.position;
-			ball.transform.localEulerAngles = Vector3.zero;
-			ball.SetActive(true);
-			PlaySoundWithClip(ExitClip);
-			ball.GetComponent<Rigidbody2D>().AddRelativeForce(Force);
+				if (ball != null)
+				{
+					
+				var r = Random.Range(0, 2);
+				var ChocoOutPosition = r == 0 ? ChocoOutPosition1 : ChocoOutPosition2;
+				ball.transform.position = ChocoOutPosition.transform.position;
+				ball.transform.localEulerAngles = Vector3.zero;
+				ball.SetActive(true);
+				PlaySoundWithClip(ExitClip);
+				ball.GetComponent<Rigidbody2D>().AddRelativeForce(Force);
+				
+				int awardedScore = CalculateScore();
 			
-			int awardedScore = CalculateScore();
-
-			if (ScoreManager.Instance != null)
-			{
-				ScoreManager.Instance.AddScore(awardedScore);
+				if (ScoreManager.Instance != null)
+				{
+					ScoreManager.Instance.AddScore(awardedScore);
+				}
+				SpawnHitEffect(awardedScore);
 			}
-			SpawnHitEffect(awardedScore);
 			StopPulseEffect();
 		}
 

@@ -41,15 +41,19 @@ namespace _1._Project.Scripts.Colliders
 			ball.SetActive(false);
 			GameManager.CreateBall();
 			yield return new WaitForSeconds(TimeWaiting);
-			ball.transform.position = HelloKittyOutPosition.transform.position;
-			ball.transform.position = outputPosition.position;
-			ball.SetActive(true);
-			PlaySoundWithClip(ExitClip);
-			var ballForce = new Vector3(
-				x:UnityEngine.Random.Range(MinForce.x, MaxForce.x),
-				y:UnityEngine.Random.Range(MinForce.y, MaxForce.y),
-				z:UnityEngine.Random.Range(MinForce.z, MaxForce.z));
-			ball.GetComponent<Rigidbody2D>().AddRelativeForce(ballForce);
+			if (ball != null)
+			{
+				ball.transform.position = HelloKittyOutPosition.transform.position;
+				ball.transform.position = outputPosition.position;
+				ball.transform.position = outputPosition.position;
+				ball.SetActive(true);
+				PlaySoundWithClip(ExitClip);
+				var ballForce = new Vector3(
+					x:UnityEngine.Random.Range(MinForce.x, MaxForce.x),
+					y:UnityEngine.Random.Range(MinForce.y, MaxForce.y),
+					z:UnityEngine.Random.Range(MinForce.z, MaxForce.z));
+				ball.GetComponent<Rigidbody2D>().AddRelativeForce(ballForce);
+			}
 		}
 
 		private IEnumerator AlterBloom(Bloom b)
